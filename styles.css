@@ -1,7 +1,3 @@
-.navbar {
-    /* margin-bottom: 0.5rem; */
-}
-
 .navbar-end {
     text-transform: uppercase;
 }
@@ -10,12 +6,24 @@
     max-height: 6rem;
 }
 
-a.navbar-item:hover {
-    color: #914164;
-    background-color: transparent;
+
+
+a.navbar-item:hover, 
+a.navbar-link:hover,
+.navbar-dropdown a.navbar-item:hover {
+    color: #914164 !important;
 }
 
 a.navbar-item.is-active {
     /* color: #ef77ac; */
     color: #914164;
+}
+
+/* custom  */
+.just-image {
+    padding: 0
+}
+
+.section-top {
+    background-color: pink;
 }
