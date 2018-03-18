@@ -6,7 +6,17 @@
     max-height: 6rem;
 }
 
+body{
+    background-image: url("Jana_44.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
 
+.card {
+    margin-bottom: 3rem;
+}
 
 a.navbar-item:hover, 
 a.navbar-link:hover,
