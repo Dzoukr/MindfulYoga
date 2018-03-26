@@ -6,6 +6,14 @@
     max-height: 6rem;
 }
 
+body{
+    background-image: url("Jana_18.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
 a.navbar-item:hover, 
 a.navbar-link:hover,
 .navbar-dropdown a.navbar-item:hover {
@@ -31,7 +39,6 @@ a.navbar-item.is-active {
     background-color:white;
     margin-bottom: 5rem !important;
     font-size: 1.3rem;
-    border-radius: 0.2rem;
 }
 
 .fill {
