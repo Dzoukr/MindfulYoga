@@ -27,7 +27,7 @@ a.navbar-item.is-active {
     background-color: pink;
 }
 
-.lessons {
+.practice {
     background-color:white;
     margin-bottom: 5rem !important;
     font-size: 1.3rem;
@@ -45,4 +45,22 @@ a.navbar-item.is-active {
     align-items: center;
     background-color: #f5f5f5;
     margin-top: -7rem;
+}
+
+.lessons {
+    background-image: url('Jana_22.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+
+    
+
+}
+
+.lessons .text {
+    background-color: white;
+}
+
+.lessons .empty {
+    background-color: transparent;
+    height: 20rem;
 }
