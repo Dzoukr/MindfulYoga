@@ -51,9 +51,7 @@ a.navbar-item.is-active {
     background-image: url('Jana_22.jpg');
     background-attachment: fixed;
     background-size: cover;
-
-    
-
+    background-position: center;
 }
 
 .lessons .text {
