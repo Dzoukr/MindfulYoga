@@ -37,3 +37,12 @@ a.navbar-item.is-active {
 .fill {
     margin: auto;
 }
+
+.center-content{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin-top: -7rem;
+}
