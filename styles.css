@@ -1,3 +1,12 @@
+body {
+    font-size: 1.1rem;
+    font-family: 'Nunito Sans';
+}
+
+h1, h2 {
+    color: #914164 !important;
+}
+
 .navbar-end {
     text-transform: uppercase;
 }
@@ -30,7 +39,6 @@ a.navbar-item.is-active {
 .practice {
     background-color:white;
     margin-bottom: 5rem !important;
-    font-size: 1.3rem;
     border-radius: 0.2rem;
 }
 
@@ -61,4 +69,15 @@ a.navbar-item.is-active {
 .lessons .empty {
     background-color: transparent;
     height: 20rem;
+}
+
+
+.about-me h1,
+.about-me h2 {
+    margin-bottom: 2rem;
+    margin-top: 3rem !important;
+}
+
+.contact {
+    font-size: 1.3rem;
 }
