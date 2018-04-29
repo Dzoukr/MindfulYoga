@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Yoga Easy - Jana Provazníková</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <link rel="stylesheet" href="styles.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <script defer src="scripts.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
 </head>
-
 <body>
-
     <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="#">
                 <img src="logo.png" alt="" height="80">
             </a>
-            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+              
         </div>
-        <div class="navbar-menu">
+        <div class="navbar-menu" id="navMenu">
 
             <div class="navbar-end">
                 <a class="navbar-item is-active" href="index.html">O mně</a>
@@ -34,19 +33,18 @@
                         Lekce
                     </a>
                     <div class="navbar-dropdown">
-                        <a class="navbar-item" href="#">
-                            Individuální lekce
-                        </a>
-                        <a class="navbar-item" href="#">
+                        <a class="navbar-item" href="lekce.html#skupinove">
                             Skupinové lekce
                         </a>
-                        <a class="navbar-item" href="#">
+                        <a class="navbar-item" href="lekce.html#individualni">
+                            Individuální lekce
+                        </a>
+                        <a class="navbar-item" href="lekce.html#firemni">
                             Office yoga
                         </a>
                     </div>
                 </div>
 
-                <a class="navbar-item" href="#">Workshopy</a>
                 <a class="navbar-item" href="kde-cvicim.html">Kde cvičím</a>
                 <a class="navbar-item" href="kontakt.html">Kontakt</a>
             </div>
@@ -56,7 +54,7 @@
     <!-- ABOUT -->
 
     <figure class="image">
-        <img src="Jana_77_edit.jpg">
+        <img src="Jana_77.jpg">
     </figure>
 
     <section class="section">
@@ -123,13 +121,6 @@
                     <p>FISAF, Workshop jóga pro seniory, 20 h</p>
                     <p>další …</p>
 
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>
@@ -162,20 +153,12 @@
                                     <i class="far fa-envelope fa-2x" data-fa-transform="shrink-5 " data-fa-mask="fas fa-circle"></i>
                                 </a>
                             </div>
-
-
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
 
         </div>
     </footer>
-
-
 </body>
-
 </html>

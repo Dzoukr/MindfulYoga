@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Yoga Easy - Jana Provazníková</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <link rel="stylesheet" href="styles.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <script defer src="scripts.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
 </head>
 
@@ -18,13 +19,13 @@
             <a class="navbar-item" href="#">
                 <img src="logo.png" alt="" height="80">
             </a>
-            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
         </div>
-        <div class="navbar-menu">
+        <div class="navbar-menu" id="navMenu">
 
             <div class="navbar-end">
                 <a class="navbar-item" href="index.html">O mně</a>
@@ -46,9 +47,8 @@
                     </div>
                 </div>
 
-                <a class="navbar-item" href="#">Workshopy</a>
                 <a class="navbar-item" href="kde-cvicim.html">Kde cvičím</a>
-                <a class="navbar-item" href="#">Kontakt</a>
+                <a class="navbar-item" href="kontakt.html">Kontakt</a>
             </div>
         </div>
     </nav>
@@ -57,11 +57,10 @@
 
         <section class="section empty">
             <a name="skupinove"></a>
-            
         </section>
-        
+
         <section class="section text">
-            
+
             <div class="columns">
                 <div class="column is-three-fifths is-offset-one-fifth">
                     <div class="content">
@@ -96,7 +95,6 @@
         </section>
         <section class="section empty">
             <a name="individualni"></a>
-
         </section>
 
         <section class="section text">
@@ -113,7 +111,7 @@
                             odhalení naučených stereotypů a poskytnutí zpětné vazby. Získáte řadu doporučení pro domácí praxi
                             tak, aby cvičení bylo efektivní a přispívalo k Vašemu osobnímu rozvoji. Sekvenci cviků a jejich
                             popis je možno po setkání i zaslat v textové podobě.</p>
-                        <p>Cena 750 Kč/hod.</p>
+                        <p>Cena 800 Kč/hod.</p>
                         <p style="font-size: 1.2rem; margin-top: 2rem;">
                             <a href="kontakt.html">Kontaktujte mě&nbsp;
                                 <i class="fas fa-long-arrow-alt-right"></i>
@@ -126,7 +124,6 @@
 
         <section class="section empty">
             <a name="firemni"></a>
-
         </section>
 
         <section class="section text">
@@ -152,15 +149,7 @@
                 </div>
             </div>
         </section>
-
-
-
     </div>
-
-
-
-
-
 
     <footer class="footer">
         <div class="container">
@@ -189,22 +178,11 @@
                                     <i class="far fa-envelope fa-2x" data-fa-transform="shrink-5 " data-fa-mask="fas fa-circle"></i>
                                 </a>
                             </div>
-
-
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
-
         </div>
     </footer>
-
-
-
-
 </body>
-
 </html>
