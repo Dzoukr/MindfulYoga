@@ -103,6 +103,9 @@ a.navbar-item.is-active {
         text-align: center;
     }
 
+    .practice {
+        background-color: #fef3f9;
+    }
 }
 
 
