@@ -3,7 +3,7 @@ body {
     font-family: 'Nunito Sans';
     height:100%;
     width:100%;
-    
+    background-image: url('Jana_22.jpg'); 
     background-size:cover;
     background-repeat:no-repeat;
     background-position: center center;
@@ -64,7 +64,7 @@ a.navbar-item.is-active {
 }
 
 .lessons {
-    background-image: url('Jana_22.jpg'); 
+    
 }
 
 .lessons .text {
@@ -76,7 +76,7 @@ a.navbar-item.is-active {
     height: 20rem;
 }
 
-.where {
+.kde-cvicim {
     background-image: url("Jana_18.jpg");
 }
 
