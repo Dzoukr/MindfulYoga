@@ -6,9 +6,6 @@ html{
 body {
     font-size: 1.1rem;
     font-family: 'Nunito Sans';
-    background-repeat:no-repeat;
-    background-position: center center;
-    background-attachment:fixed;
 }
 
 
@@ -65,6 +62,10 @@ a.navbar-item.is-active {
 
 .lessons {
     background-image: url('Jana_22.jpg'); 
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size: cover !important;
 }
 
 
@@ -79,6 +80,9 @@ a.navbar-item.is-active {
 
 .kde-cvicim {
     background-image: url("Jana_18.jpg");
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
 }
 
 
