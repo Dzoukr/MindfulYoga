@@ -6,7 +6,6 @@ html{
 body {
     font-size: 1.1rem;
     font-family: 'Nunito Sans';
-    background-size:cover;
     background-repeat:no-repeat;
     background-position: center center;
     background-attachment:fixed;
@@ -67,6 +66,7 @@ a.navbar-item.is-active {
 .lessons {
     background-image: url('Jana_22.jpg'); 
 }
+
 
 .lessons .text {
     background-color: white;
