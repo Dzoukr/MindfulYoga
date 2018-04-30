@@ -1,6 +1,7 @@
 body {
     font-size: 1.1rem;
     font-family: 'Nunito Sans';
+    min-height: 100%;
 }
 
 
@@ -58,10 +59,15 @@ a.navbar-item.is-active {
 }
 
 .lessons {
-    background-image: url('Jana_22.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+        background: url('Jana_22.jpg') no-repeat center center fixed; 
+        -webkit-background-size: 100%; 
+        -moz-background-size: 100%; 
+        -o-background-size: 100%; 
+        background-size: 100%; 
+        -webkit-background-size: cover; 
+        -moz-background-size: cover; 
+        -o-background-size: cover; 
+        background-size: cover; 
 }
 
 .lessons .text {
