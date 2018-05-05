@@ -86,6 +86,8 @@ a.navbar-item.is-active {
     background-size: cover !important;
 }
 
+.mobile-only { display: none; }
+
 @media only screen and (max-device-width: 480px) {
     .lessons {
         background: none;
@@ -106,6 +108,8 @@ a.navbar-item.is-active {
     .practice {
         background-color: #fef3f9;
     }
+
+    .mobile-only { display: inline; }
 }
 
 
