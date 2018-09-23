@@ -118,8 +118,16 @@ a.navbar-item.is-active {
     .lessons {
         background: none;
     }
+
+    .ind-lessons {
+        background: none;
+    }
     
     .lessons .empty {
+        display: none;
+    }
+
+    .ind-lessons .empty {
         display: none;
     }
 
