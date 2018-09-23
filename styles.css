@@ -77,6 +77,24 @@ a.navbar-item.is-active {
     height: 20rem;
 }
 
+.ind-lessons {
+    background-image: url('Jana_77.jpg'); 
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size: cover !important;
+}
+
+
+.ind-lessons .text {
+    background-color: white;
+}
+
+.ind-lessons .empty {
+    background-color: transparent;
+    height: 20rem;
+}
+
 
 .kde-cvicim {
     background-image: url("Jana_18.jpg");
