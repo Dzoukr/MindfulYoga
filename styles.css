@@ -85,6 +85,17 @@ a.navbar-item.is-active {
     background-size: cover !important;
 }
 
+.for-companies {
+    background-image: url('Jana_03.jpg'); 
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size: cover !important;
+}
+
+.for-companies .text {
+    background-color: white;
+}
 
 .ind-lessons .text {
     background-color: white;
@@ -95,6 +106,10 @@ a.navbar-item.is-active {
     height: 20rem;
 }
 
+.for-companies .empty {
+    background-color: transparent;
+    height: 20rem;
+}
 
 .kde-cvicim {
     background-image: url("Jana_18.jpg");
@@ -123,6 +138,14 @@ a.navbar-item.is-active {
         background: none;
     }
     
+    .for-companies {
+        background: none;
+    }
+    
+    .for-companies .empty {
+        display: none;
+    }
+
     .lessons .empty {
         display: none;
     }
