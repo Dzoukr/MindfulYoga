@@ -127,6 +127,14 @@ a.navbar-item.is-active {
     background-size: cover !important;
 }
 
+.workshopy .text {
+    background-color: white;
+}
+
+.workshopy .empty {
+    background-color: transparent;
+    height: 20rem;
+}
 .mobile-only { display: none; }
 
 @media only screen and (max-device-width: 480px) {
