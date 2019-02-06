@@ -9,7 +9,16 @@ body {
 }
 
 h1, h2 {
-    color: #914164 !important;
+    color: #11acc7 !important;
+}
+
+.fa-ul li svg {
+    color: #11acc7;
+}
+
+ul li {
+    list-style-type: none;
+    padding-left: 1.5rem;
 }
 
 .navbar-end {
@@ -18,18 +27,19 @@ h1, h2 {
 
 .navbar-item img {
     max-height: 6rem;
+    padding: 0.6rem;
 }
 
 a.navbar-item:hover, 
 a.navbar-link:hover,
 .navbar-dropdown a.navbar-item:hover {
-    color: #914164 !important;
+    color: #11acc7 !important;
 }
 
 a,
 a.navbar-item.is-active {
     /* color: #ef77ac; */
-    color: #914164;
+    color: #0f7989;
 }
 
 /* custom  */
@@ -76,6 +86,26 @@ a.navbar-item.is-active {
     background-color: transparent;
     height: 20rem;
 }
+
+.mindful {
+    background-image: url('Jana_52.jpg'); 
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size: cover !important;
+}
+
+
+.mindful .text {
+    background-color: white;
+}
+
+.mindful .empty {
+    background-color: transparent;
+    height: 20rem;
+}
+
+
 
 .ind-lessons {
     background-image: url('Jana_77.jpg'); 
