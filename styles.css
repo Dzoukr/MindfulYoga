@@ -115,6 +115,14 @@ a.navbar-item.is-active {
     background-size: cover !important;
 }
 
+.retreat {
+    background-image: url('https://res.cloudinary.com/mindfulyoga/image/upload/c_scale,w_2050/v1556132130/newsletters/mlyn.png'); 
+    background-repeat:no-repeat;
+    background-position: top;
+    background-attachment:fixed;
+    background-size: auto !important;
+}
+
 .for-companies {
     background-image: url('Jana_03.jpg'); 
     background-repeat:no-repeat;
@@ -132,6 +140,15 @@ a.navbar-item.is-active {
 }
 
 .ind-lessons .empty {
+    background-color: transparent;
+    height: 20rem;
+}
+
+.retreat .text {
+    background-color: white;
+}
+
+.retreat .empty {
     background-color: transparent;
     height: 20rem;
 }
