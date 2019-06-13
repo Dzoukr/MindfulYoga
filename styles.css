@@ -197,6 +197,18 @@ a.navbar-item.is-active {
         background: none;
     }
     
+    .mindful {
+        background: none;
+    }
+    
+    .kde-cvicim {
+        background: none;
+    }
+
+    .workshopy {
+        background: none;
+    }
+
     .for-companies .empty {
         display: none;
     }
@@ -208,9 +220,13 @@ a.navbar-item.is-active {
     .ind-lessons .empty {
         display: none;
     }
+    
+    .mindful .empty {
+        display: none;
+    }
 
-    .kde-cvicim {
-        background: none;
+    .workshopy .empty {
+        display: none;
     }
 
     .fill {
