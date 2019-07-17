@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build MindfulYoga.FunctionApp",
+            "command": "dotnet build src/MindfulYoga.FunctionApp",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "runFunctionsHost",
+            "type": "shell",
+            "dependsOn": "build MindfulYoga.FunctionApp",
+            "options": {
+              "cwd": "${workspaceFolder}/src/MindfulYoga.FunctionApp/bin/Debug/netcoreapp2.2"
+            },
+            "command": "func host start",
+            "isBackground": true,
+            "problemMatcher": "$func-watch"
+        } 
+           
+    ]
+}
