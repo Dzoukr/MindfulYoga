@@ -1,4 +1,4 @@
-version 5.206.0
+version 5.215.0
 source https://api.nuget.org/v3/index.json
 framework: netstandard2.0, netcoreapp2.2
 storage: none
@@ -11,10 +11,6 @@ nuget TaskBuilder.fs
 
 // Azure functions
 nuget Giraffe
-nuget Microsoft.AspNetCore
-nuget Microsoft.AspNetCore.Cors
-nuget Microsoft.AspNetCore.Authentication.JwtBearer
-nuget Microsoft.AspNetCore.StaticFiles
 nuget Microsoft.NET.Sdk.Functions
 nuget Microsoft.Azure.WebJobs.Extensions.Storage
 nuget Microsoft.Azure.WebJobs.Extensions.DurableTask
