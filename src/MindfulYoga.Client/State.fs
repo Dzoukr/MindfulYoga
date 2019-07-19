@@ -21,6 +21,7 @@ let pageParser: Parser<Page -> Page, Page> =
         // map (AdminPage(Users)) (s Users.Path)
         // map (AdminPage(Lessons)) (s Lessons.Path)
         map AboutMe (s Page.AboutMe.Path)
+        map MindfulYoga (s Page.MindfulYoga.Path)
         // map MyLessons (s MyLessons.Path)
     ]
 

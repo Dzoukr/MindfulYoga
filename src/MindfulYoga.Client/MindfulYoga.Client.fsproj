@@ -8,6 +8,9 @@
         <Compile Include="Router.fs" />
         <Compile Include="Domain.fs" />
         <Compile Include="State.fs" />
+        <Compile Include="SharedViews.fs" />
+        <Compile Include="AboutMe\View.fs" />
+        <Compile Include="MindfulYoga\View.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
     </ItemGroup>
