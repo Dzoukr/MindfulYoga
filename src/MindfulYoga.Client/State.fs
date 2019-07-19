@@ -20,14 +20,14 @@ let pageParser: Parser<Page -> Page, Page> =
         // map ((fun (x:string) -> Guid(x)) >> ResetPassword >> AuthPage) (s "/resetPassword" </> str)
         // map (AdminPage(Users)) (s Users.Path)
         // map (AdminPage(Lessons)) (s Lessons.Path)
-        // map Calendar (s Page.Calendar.Path)
+        map AboutMe (s Page.AboutMe.Path)
         // map MyLessons (s MyLessons.Path)
     ]
 
 let urlUpdate (result: Option<Page>) state =
     match result with
     | None -> state, Navigation.newUrl Router.Page.Default.Path
-    | Some page -> state, Cmd.none
+    | Some page -> { state with Page = page }, Cmd.none
         
 
 let init result =

@@ -7,7 +7,7 @@ type State = {
 }
 with
     static member Init = {
-        Page = Page.AdminPage(AdminPage.Users)
+        Page = Page.Default
     }
 
 type Msg =
