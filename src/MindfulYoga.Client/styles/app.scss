@@ -1,6 +1,7 @@
 @import "menu.scss";
 @import "lessons.scss";
 @import "mindfulyoga.scss";
+@import "retreat.scss";
 
 body {
     font-size: 1.1rem;
@@ -28,7 +29,6 @@ a.mindful-link {
     font-weight: bold;
 }
 
-// global
 .empty {
     background-color: transparent;
     height: 20rem;

@@ -9,11 +9,15 @@ open Browser.Types
 type Page =
     | AboutMe
     | MindfulYoga
+    | Retreat
+    | Contact
     with
         member x.Path = 
             match x with
             | AboutMe -> "/o-mne"
             | MindfulYoga -> "/mindful-yoga"
+            | Retreat -> "/retreat"
+            | Contact -> "/kontakt"
         static member Default = MindfulYoga
 
 
