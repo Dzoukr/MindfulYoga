@@ -3,6 +3,9 @@
 @import "mindfulyoga.scss";
 @import "retreat.scss";
 @import "lessons.scss";
+@import "individuallessons.scss";
+@import "companylessons.scss";
+@import "contact.scss";
 
 body {
     font-size: 1.1rem;
@@ -28,6 +31,9 @@ a {
 }
 a.mindful-link {
     font-weight: bold;
+}
+a.navbar-item {
+    margin-right: 1rem;
 }
 
 .empty {
@@ -57,5 +63,14 @@ a.mindful-link {
 
     a {
         margin-right: 0.5rem;
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    .fill {
+        text-align: center;
+    }
+    .empty {
+        display: none;
     }
 }

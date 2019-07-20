@@ -7,7 +7,7 @@ open Fable.React.Props
 let emptySection = section [ Class "empty"] []
 
 let _textSection cName c =
-    section [ Class (sprintf "text %s" cName) ] [
+    section [ Class (sprintf "text section %s" cName) ] [
         Columns.columns [] [
             Column.column [ Column.Width (Screen.All, Column.IsThreeFifths); Column.Offset(Screen.All, Column.IsOneFifth )] [
                 Content.content [] c
@@ -29,3 +29,13 @@ let in2ColTable rows =
     |> tbody []
     |> List.singleton
     |> table []
+
+let inList c =
+    c 
+    |> List.map (fun x ->
+        li [] [
+            i [ Class "fa-li fas fa-chevron-circle-right" ] [] 
+            str x
+        ]
+    )
+    |> ul [ Class "fa-ul" ]

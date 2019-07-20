@@ -6,15 +6,7 @@ open Fable.React.Props
 open MindfulYoga.Client
 open SharedViews
 
-let inList c =
-    c 
-    |> List.map (fun x ->
-        li [] [
-            i [ Class "fa-li fas fa-chevron-circle-right" ] [] 
-            str x
-        ]
-    )
-    |> ul [ Class "fa-ul" ]
+
 
 let view =
     div [ Class "mindfulyoga"] [

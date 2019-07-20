@@ -13,6 +13,9 @@
         <Compile Include="MindfulYoga\View.fs" />
         <Compile Include="Retreat\View.fs" />
         <Compile Include="Lessons\View.fs" />
+        <Compile Include="IndividualLessons\View.fs" />
+        <Compile Include="CompanyLessons\View.fs" />
+        <Compile Include="Contact\View.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
     </ItemGroup>

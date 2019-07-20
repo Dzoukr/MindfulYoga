@@ -34,7 +34,7 @@ open Elmish.HMR
 #endif
 
 Program.mkProgram State.init State.update View.render
-|> Program.toNavigable (parsePath State.pageParser) State.urlUpdate
+|> Program.toNavigable (parsePath Router.pageParser) State.urlUpdate
 #if DEBUG
 |> Program.withConsoleTrace
 #endif

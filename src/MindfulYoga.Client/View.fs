@@ -10,7 +10,10 @@ let menu (currentPage:Router.Page) =
     let item (p:Router.Page) title =
         let isActive = p = currentPage
         Navbar.Item.a [ Navbar.Item.Option.IsActive isActive; Navbar.Item.Option.Props [ Href p.Path; OnClick Router.goToUrl ] ] [ str title]
-    
+    let itemBold (p:Router.Page) title =
+        let isActive = p = currentPage
+        Navbar.Item.a [ Navbar.Item.Option.IsActive isActive; Navbar.Item.Option.Props [ Href p.Path; OnClick Router.goToUrl ] ] [ strong [] [ str title ] ]
+
     Navbar.navbar [ Navbar.Option.IsTransparent ] [
         Navbar.Brand.div [] [
             Navbar.Item.a [ Navbar.Item.Option.Props [ Href Router.AboutMe.Path; OnClick Router.goToUrl ] ] [
@@ -24,10 +27,14 @@ let menu (currentPage:Router.Page) =
         ]
         Navbar.menu [ Navbar.Menu.Option.Props [ Id "navMenu"] ] [
             Navbar.End.div [] [
+                itemBold Router.MindfulYoga "Mindful Yoga"
                 item Router.AboutMe "O mně"
-                item Router.MindfulYoga "Mindful Yoga"
                 item Router.Retreat "Retreat"
                 item Router.Lessons "Lekce"
+                item Router.IndividualLessons "Individuální lekce"
+                item Router.CompanyLessons "Jóga pro firmy"
+                item Router.Workshops "Workshopy"
+                item Router.Contact "Kontakt"
             ]            
         ]
     ]
@@ -41,7 +48,7 @@ let footerDiv =
                         Column.column [ Column.Option.CustomClass "fill"] [
                             img [ Src "img/logo.png" ]                            
                         ]
-                        Column.column [] [
+                        Column.column [ Column.Option.CustomClass "fill"] [
                             Content.content [] [
                                 h3 [] [ str "Kontakt" ]
                                 div [] [ str "Ing. Jana Provazníková" ]
@@ -67,11 +74,19 @@ let render (state : State) (dispatch : Msg -> unit) =
         match state.Page with
         | Router.AboutMe -> AboutMe.View.view
         | Router.MindfulYoga -> MindfulYoga.View.view
-        | Router.Lessons -> Lessons.View.view
         | Router.Retreat -> Retreat.View.view
+        | Router.Lessons -> Lessons.View.view
+        | Router.IndividualLessons -> IndividualLessons.View.view
+        | Router.CompanyLessons -> CompanyLessons.View.view
+        | Router.Contact -> Contact.View.view
     
+    let showFooter =
+        match state.Page with
+        | Router.Contact -> false
+        | _ -> true
+
     div [] [
-        menu state.Page
-        currentPage
-        footerDiv
+        yield menu state.Page
+        yield currentPage
+        if showFooter then yield footerDiv
     ]
