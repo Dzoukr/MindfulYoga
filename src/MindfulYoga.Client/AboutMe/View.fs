@@ -7,7 +7,7 @@ open MindfulYoga.Client
 open SharedViews
 
 let view =
-    div [ Class "lessons"] [
+    div [ Class "aboutme"] [
         emptySection
         textSection [
             h1 [] [ str "Můj příběh"]

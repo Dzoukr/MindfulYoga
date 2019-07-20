@@ -10,6 +10,7 @@ type Page =
     | AboutMe
     | MindfulYoga
     | Retreat
+    | Lessons
     | Contact
     with
         member x.Path = 
@@ -17,6 +18,7 @@ type Page =
             | AboutMe -> "/o-mne"
             | MindfulYoga -> "/mindful-yoga"
             | Retreat -> "/retreat"
+            | Lessons -> "/lekce"
             | Contact -> "/kontakt"
         static member Default = MindfulYoga
 

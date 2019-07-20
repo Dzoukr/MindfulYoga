@@ -12,6 +12,7 @@
         <Compile Include="AboutMe\View.fs" />
         <Compile Include="MindfulYoga\View.fs" />
         <Compile Include="Retreat\View.fs" />
+        <Compile Include="Lessons\View.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
     </ItemGroup>

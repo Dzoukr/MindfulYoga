@@ -27,6 +27,7 @@ let menu (currentPage:Router.Page) =
                 item Router.AboutMe "O mně"
                 item Router.MindfulYoga "Mindful Yoga"
                 item Router.Retreat "Retreat"
+                item Router.Lessons "Lekce"
             ]            
         ]
     ]
@@ -66,6 +67,7 @@ let render (state : State) (dispatch : Msg -> unit) =
         match state.Page with
         | Router.AboutMe -> AboutMe.View.view
         | Router.MindfulYoga -> MindfulYoga.View.view
+        | Router.Lessons -> Lessons.View.view
         | Router.Retreat -> Retreat.View.view
     
     div [] [
