@@ -14,7 +14,6 @@ type Page =
     | Lessons
     | IndividualLessons
     | CompanyLessons
-    | Workshops
     | Contact
     with
         member x.Path = 
@@ -25,7 +24,6 @@ type Page =
             | Lessons -> "/lekce"
             | IndividualLessons -> "/individualni-lekce"
             | CompanyLessons -> "/joga-pro-firmy"
-            | Workshops -> "/workshopy"
             | Contact -> "/kontakt"
         static member Default = MindfulYoga
 
@@ -41,7 +39,6 @@ let pageParser: Parser<Page -> Page, Page> =
         map Lessons (s Page.Lessons.Path)
         map IndividualLessons (s Page.IndividualLessons.Path)
         map CompanyLessons (s Page.CompanyLessons.Path)
-        map Workshops (s Page.Workshops.Path)
         map Contact (s Page.Contact.Path)
     ]
 

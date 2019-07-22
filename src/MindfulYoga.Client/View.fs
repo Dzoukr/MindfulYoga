@@ -10,9 +10,6 @@ let menu (currentPage:Router.Page) =
     let item (p:Router.Page) title =
         let isActive = p = currentPage
         Navbar.Item.a [ Navbar.Item.Option.IsActive isActive; Navbar.Item.Option.Props [ Href p.Path; OnClick Router.goToUrl ] ] [ str title]
-    let itemBold (p:Router.Page) title =
-        let isActive = p = currentPage
-        Navbar.Item.a [ Navbar.Item.Option.IsActive isActive; Navbar.Item.Option.Props [ Href p.Path; OnClick Router.goToUrl ] ] [ strong [] [ str title ] ]
 
     Navbar.navbar [ Navbar.Option.IsTransparent ] [
         Navbar.Brand.div [] [
@@ -27,13 +24,12 @@ let menu (currentPage:Router.Page) =
         ]
         Navbar.menu [ Navbar.Menu.Option.Props [ Id "navMenu"] ] [
             Navbar.End.div [] [
-                itemBold Router.MindfulYoga "Mindful Yoga"
+                item Router.MindfulYoga "Mindful Yoga"
                 item Router.AboutMe "O mně"
                 item Router.Retreat "Retreat"
                 item Router.Lessons "Lekce"
                 item Router.IndividualLessons "Individuální lekce"
                 item Router.CompanyLessons "Jóga pro firmy"
-                item Router.Workshops "Workshopy"
                 item Router.Contact "Kontakt"
             ]            
         ]
@@ -46,9 +42,6 @@ let footerDiv =
                 Column.column [ Column.Width (Screen.All, Column.IsThreeFifths); Column.Offset(Screen.All, Column.IsOneFifth )] [
                     Columns.columns [ ] [
                         Column.column [ Column.Option.CustomClass "fill"] [
-                            img [ Src "img/logo.png" ]                            
-                        ]
-                        Column.column [ Column.Option.CustomClass "fill"] [
                             Content.content [] [
                                 h3 [] [ str "Kontakt" ]
                                 div [] [ str "Ing. Jana Provazníková" ]
@@ -60,7 +53,19 @@ let footerDiv =
                                 a [ Href "mailto:jana@mindfulyoga.cz" ] [
                                     i [ Class "far fa-envelope fa-2x"; Data ("fa-transform","shrink-5"); Data("fa-mask","fas fa-circle") ] []                                    
                                 ]
-
+                            ]
+                        ]
+                        Column.column [ Column.Option.CustomClass "fill"] [
+                            Content.content [] [
+                                h3 [] [ str "Přihlásit k odběru newsletteru" ]
+                                Field.div [ Field.IsGrouped ] [
+                                    p [ Class "control is-expanded"] [
+                                        Input.email [ Input.Placeholder "Vložit email" ]
+                                    ]
+                                    p [ Class "control" ] [
+                                        Button.a [] [ str "Odeslat" ]
+                                    ]
+                                ]
                             ]
                         ]
                     ]

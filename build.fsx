@@ -66,14 +66,15 @@ Target.create "InstallClient" (fun _ ->
 )
 
 Target.create "Run" (fun _ ->
-    let server = async {
-        runDotNet "watch run" functionAppWatcherPath
-    }
+    // let server = async {
+    //     runDotNet "watch run" functionAppWatcherPath
+    // }
     let client = async {
         runTool yarnTool "webpack-dev-server" __SOURCE_DIRECTORY__
     }
     
-    [client;server]
+    //[client;server]
+    [client]
     |> Async.Parallel
     |> Async.RunSynchronously
     |> ignore

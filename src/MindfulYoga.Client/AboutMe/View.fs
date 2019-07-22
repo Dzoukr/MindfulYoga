@@ -9,6 +9,9 @@ open SharedViews
 let view =
     div [ Class "aboutme"] [
         emptySection
+        figure [ Class "image mobile-only"] [
+            img [ Src "img/aboutme_bg.jpg"]
+        ]
         textSection [
             h1 [] [ str "Můj příběh"]
             p [] [

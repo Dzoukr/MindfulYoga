@@ -11,6 +11,9 @@ open SharedViews
 let view =
     div [ Class "mindfulyoga"] [
         emptySection
+        figure [ Class "image mobile-only"] [
+            img [ Src "img/mindful_bg.jpg"]
+        ]
         textSection [
             h1 [] [ str "MINDFUL YOGA "; sup [] [str "®"]]
             p [] [

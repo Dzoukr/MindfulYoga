@@ -32,9 +32,8 @@ a {
 a.mindful-link {
     font-weight: bold;
 }
-a.navbar-item {
-    margin-right: 1rem;
-}
+
+.mobile-only { display: none; }
 
 .empty {
     background-color: transparent;
@@ -58,12 +57,12 @@ a.navbar-item {
 
     h3 {
         text-transform: none;
-        color: inherit !important;
     }
 
     a {
         margin-right: 0.5rem;
     }
+
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -73,4 +72,5 @@ a.navbar-item {
     .empty {
         display: none;
     }
+    .mobile-only { display: inline; }
 }
