@@ -19,6 +19,7 @@ let init result =
  
 let update (msg : Msg) (state : State) : State * Cmd<Msg> =
     match msg with
+    | ToggleBurgerMenu -> { state with BurgerMenuVisible = not state.BurgerMenuVisible}, Cmd.none
     | EmailChanged v -> { state with SubscribeEmail = v }, Cmd.none
     | Subscribe -> { state with IsLoading = true }, Cmd.OfAsync.perform Server.authAPI.Subscribe state.SubscribeEmail (fun _ -> Subscribed)
     | Subscribed -> { state with IsLoading = false; IsSubscribed = true }, Cmd.none

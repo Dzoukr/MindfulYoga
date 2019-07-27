@@ -6,10 +6,10 @@ open Fable.React
 open Fable.React.Props
 open Fable.Core.JsInterop
 
-let menu (currentPage:Router.Page) =
-    
+let menu (state:State) dispatch =
+    let burgerMenuClass = if state.BurgerMenuVisible then "is-active" else ""
     let item (p:Router.Page) title =
-        let isActive = p = currentPage
+        let isActive = p = state.Page
         Navbar.Item.a [ Navbar.Item.Option.IsActive isActive; Navbar.Item.Option.Props [ Href p.Path; OnClick Router.goToUrl ] ] [ str title]
 
     Navbar.navbar [ Navbar.Option.IsTransparent ] [
@@ -17,13 +17,13 @@ let menu (currentPage:Router.Page) =
             Navbar.Item.a [ Navbar.Item.Option.Props [ Href Router.AboutMe.Path; OnClick Router.goToUrl ] ] [
                 img [ Src "img/logo.png" ]
             ]
-            a [ Class "navbar-burger"; Data ("target","navMenu") ] [
+            a [ Class ("navbar-burger " + burgerMenuClass); OnClick (fun _ -> ToggleBurgerMenu |> dispatch) ] [
                 span [] []
                 span [] []
                 span [] []
             ]
         ]
-        Navbar.menu [ Navbar.Menu.Option.Props [ Id "navMenu"] ] [
+        Navbar.menu [ Navbar.Menu.Option.Props [ Id "navMenu"; Class ("navbar-menu " + burgerMenuClass)] ] [
             Navbar.End.div [] [
                 item Router.MindfulYoga "Mindful Yoga"
                 item Router.AboutMe "O mně"
@@ -116,7 +116,7 @@ let render (state : State) (dispatch : Msg -> unit) =
         | _ -> true
 
     div [] [
-        yield menu state.Page
+        yield menu state dispatch
         yield currentPage
         if showFooter then yield (footerDiv state dispatch)
     ]
