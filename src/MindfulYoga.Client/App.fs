@@ -7,22 +7,6 @@ open Fable.React.Props
 open Fulma
 open Thoth.Json
 
-module Server =
-
-    open MindfulYoga.Shared.Communication
-    open Fable.Remoting.Client
-    open Fable.Core
-
-    [<Emit("config.baseUrl")>]
-    let baseUrl : string = jsNative
-    let api : API =
-      Remoting.createApi()
-      |> Remoting.withRouteBuilder API.RouteBuilder
-      #if !DEBUG
-      |> Remoting.withBaseUrl baseUrl
-      #endif
-      |> Remoting.buildProxy<API>
-
 open Elmish
 open Elmish.React
 open Elmish.UrlParser

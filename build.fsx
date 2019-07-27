@@ -12,14 +12,11 @@ open Fake.Core
 open Fake.DotNet
 open Fake.IO
 
-
 let functionAppPath = Path.getFullName "./src/MindfulYoga.FunctionApp"
 let functionAppWatcherPath = Path.getFullName "./src/MindfulYoga.FunctionApp.Local"
 let functionAppDeployPath = Path.getFullName "./deploy/functionApp"
 let clientOutputPath = Path.getFullName "./src/MindfulYoga.Client/output"
 let clientDeployPath = Path.getFullName "./deploy/client"
-
-
 
 let platformTool tool winTool =
     let tool = if Environment.isUnix then tool else winTool
@@ -66,15 +63,14 @@ Target.create "InstallClient" (fun _ ->
 )
 
 Target.create "Run" (fun _ ->
-    // let server = async {
-    //     runDotNet "watch run" functionAppWatcherPath
-    // }
+    let server = async {
+        runDotNet "watch run" functionAppWatcherPath
+    }
     let client = async {
         runTool yarnTool "webpack-dev-server" __SOURCE_DIRECTORY__
     }
     
-    //[client;server]
-    [client]
+    [client;server]
     |> Async.Parallel
     |> Async.RunSynchronously
     |> ignore

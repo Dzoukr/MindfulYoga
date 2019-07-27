@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Include="Communication.fs" />
+    <Compile Include="Validation.fs" />
   </ItemGroup>
 
 </Project>

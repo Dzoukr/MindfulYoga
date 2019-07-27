@@ -16,24 +16,21 @@ nuget Microsoft.Azure.WebJobs.Extensions.Storage
 nuget Microsoft.Azure.WebJobs.Extensions.DurableTask
 nuget WindowsAzure.Storage
 nuget Fable.Remoting.Giraffe
+nuget MailChimp.Net.V3
 
 // Libraries
 nuget Mailjet.Api
 
-group Client
-    source https://api.nuget.org/v3/index.json
-    framework: netstandard2.0
-    storage: none
-
-    nuget Fable.Core ~> 3
-    nuget Fable.Elmish ~> 3
-    nuget Fable.Elmish.Debugger ~> 3
-    nuget Fable.Elmish.HMR ~> 4
-    nuget Fable.Elmish.React ~> 3
-    nuget Fable.Elmish.Browser ~> 3
-    nuget Fable.React ~> 5
-    nuget Fable.Remoting.Client ~> 5
-    nuget Fulma ~> 2
+// Client
+nuget Fable.Core ~> 3
+nuget Fable.Elmish ~> 3
+nuget Fable.Elmish.Debugger ~> 3
+nuget Fable.Elmish.HMR ~> 4
+nuget Fable.Elmish.React ~> 3
+nuget Fable.Elmish.Browser ~> 3
+nuget Fable.React ~> 5
+nuget Fable.Remoting.Client ~> 5
+nuget Fulma ~> 2
 
 group Build
     source https://api.nuget.org/v3/index.json

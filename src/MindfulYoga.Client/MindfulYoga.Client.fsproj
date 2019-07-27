@@ -5,6 +5,7 @@
         <DefineConstants>FABLE_COMPILER</DefineConstants>
     </PropertyGroup>
     <ItemGroup>
+        <Compile Include="Server.fs" />
         <Compile Include="Router.fs" />
         <Compile Include="Domain.fs" />
         <Compile Include="State.fs" />

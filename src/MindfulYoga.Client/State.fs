@@ -18,4 +18,7 @@ let init result =
     urlUpdate result State.Init
  
 let update (msg : Msg) (state : State) : State * Cmd<Msg> =
-    state, Cmd.none
+    match msg with
+    | EmailChanged v -> { state with SubscribeEmail = v }, Cmd.none
+    | Subscribe -> { state with IsLoading = true }, Cmd.OfAsync.perform Server.authAPI.Subscribe state.SubscribeEmail (fun _ -> Subscribed)
+    | Subscribed -> { state with IsLoading = false }, Cmd.none

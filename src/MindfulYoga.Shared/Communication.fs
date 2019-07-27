@@ -1,7 +1,7 @@
 ﻿module MindfulYoga.Shared.Communication
 
-type API = {
-    GetRandomInt : unit -> Async<int>
+type NewslettersAPI = {
+    Subscribe : string -> Async<unit>
 }
 with
-    static member RouteBuilder _ m = sprintf "/api/myAPI/%s" m
+    static member RouteBuilder _ m = sprintf "/api/NewslettersAPI/%s" m
