@@ -1,0 +1,34 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+trigger:
+  batch: 'true'
+  branches:
+    include: [ master, develop ]
+  paths:
+    include:
+    - src/MindfulYoga.FunctionApp/*
+    - src/MindfulYoga.Shared/*
+    - src/MindfulYoga.Libraries/*
+
+steps:
+- task: DotNetCoreInstaller@0
+  displayName: Installing .net core sdk 2.2.300
+  inputs:
+    version: '2.2.300'
+    packageType: sdk
+
+- script: dotnet tool install --tool-path . paket
+  displayName: 'Install Paket'
+
+- script: dotnet tool install --tool-path . fake-cli
+  displayName: 'Install FAKE'
+
+- script: ./fake build -t publishFunctionApp
+  displayName: 'Build'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish App Artifacts'
+  inputs:
+    pathtoPublish: './deploy/functionApp'
+    artifactName: 'functionApp'

@@ -1,0 +1,22 @@
+.lessons {
+    background-image: url("../public/img/lessons_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover !important;
+
+    a {
+        font-weight: bold;
+    }
+
+    .content {
+        margin-bottom: 5rem !important;
+        border-radius: 0.2rem;
+        background-color: white;
+        padding: 1.5rem;
+    }
+    
+    .text {
+        background: none !important;
+    }
+}

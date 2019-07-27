@@ -1,0 +1,19 @@
+// menu
+.navbar-item {
+    img {
+        max-height: 6rem;
+        padding: 0.6rem;
+    }
+}
+.navbar-end {
+    text-transform: uppercase
+}
+
+a.navbar-item.is-active {
+    //color: #0f7989 !important;
+    color: #11acc7 !important;
+}
+a.navbar-item {
+    color: inherit !important;
+    margin-right: 1rem;
+}

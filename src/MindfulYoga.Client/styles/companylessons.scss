@@ -1,0 +1,24 @@
+.company-lessons {
+    background-image: url('../public/img/companylessons_bg.jpg'); 
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-attachment:fixed;
+    background-size: cover !important;
+}
+
+#quote-begin {
+    font-size: 4rem; 
+    margin-bottom: -3rem;
+}
+
+#quote-content {
+    font-style: italic; 
+    padding-left: 4rem; 
+    padding-right: 4rem;
+}
+
+#quote-end {
+    float: right; 
+    margin-top: -3rem;
+    font-size: 4rem
+}

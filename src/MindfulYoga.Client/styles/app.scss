@@ -1,0 +1,76 @@
+@import "menu.scss";
+@import "aboutme.scss";
+@import "mindfulyoga.scss";
+@import "retreat.scss";
+@import "lessons.scss";
+@import "individuallessons.scss";
+@import "companylessons.scss";
+@import "contact.scss";
+
+body {
+    font-size: 1.1rem;
+    font-family: 'Nunito Sans';
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: 300 !important;
+}
+h1,h2,h3 {
+    color: #11acc7 !important;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: #11acc7 !important;
+}
+a {
+    color: #0f7989 !important;
+}
+a.mindful-link {
+    font-weight: bold;
+}
+
+.mobile-only { display: none; }
+
+.empty {
+    background-color: transparent;
+    height: 20rem;
+}
+
+.text {
+    background-color: white;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.centered {
+    text-align: center;
+}
+
+.footer {
+    img {
+        width: 200px;
+    }
+
+    h3 {
+        text-transform: none;
+    }
+
+    a {
+        margin-right: 0.5rem;
+    }
+
+}
+
+@media only screen and (max-device-width: 480px) {
+    .fill {
+        text-align: center;
+    }
+    .empty {
+        display: none;
+    }
+    .mobile-only { display: inline; }
+}

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <DefineConstants>FABLE_COMPILER</DefineConstants>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Server.fs" />
+        <Compile Include="Router.fs" />
+        <Compile Include="Domain.fs" />
+        <Compile Include="State.fs" />
+        <Compile Include="SharedViews.fs" />
+        <Compile Include="AboutMe\View.fs" />
+        <Compile Include="MindfulYoga\View.fs" />
+        <Compile Include="Retreat\View.fs" />
+        <Compile Include="Lessons\View.fs" />
+        <Compile Include="IndividualLessons\View.fs" />
+        <Compile Include="CompanyLessons\View.fs" />
+        <Compile Include="Contact\View.fs" />
+        <Compile Include="View.fs" />
+        <Compile Include="App.fs" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\MindfulYoga.Shared\MindfulYoga.Shared.fsproj" />
+    </ItemGroup>
+    <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>
