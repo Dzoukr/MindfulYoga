@@ -13,24 +13,28 @@ open System
 open Fable.Remoting.Server
 open Fable.Remoting.Giraffe
 
-let myApi (mailchimpApiKey:string) = 
+let myApi (log:ILogger) (mailchimpApiKey:string) = 
     {
         Subscribe = (fun email ->
             let mailChimpManager = MailChimp.Net.MailChimpManager(mailchimpApiKey)
             task {
-                let! lists = mailChimpManager.Lists.GetAllAsync()
-                let list = lists |> Seq.head
-                let contact = new MailChimp.Net.Models.Member(EmailAddress = email, StatusIfNew = MailChimp.Net.Models.Status.Subscribed)
-                let! _ = mailChimpManager.Members.AddOrUpdateAsync(list.Id, contact)
-                return ()
+                try
+                    let! lists = mailChimpManager.Lists.GetAllAsync()
+                    let list = lists |> Seq.head
+                    let contact = new MailChimp.Net.Models.Member(EmailAddress = email, StatusIfNew = MailChimp.Net.Models.Status.Subscribed)
+                    let! _ = mailChimpManager.Members.AddOrUpdateAsync(list.Id, contact)
+                    return ()
+                with ex -> 
+                    log.LogError(ex.Message)
+                    return ()
             } |> Async.AwaitTask
         )
     }
 
-let webApp mailchimpApiKey =
+let webApp log mailchimpApiKey =
     Remoting.createApi()
     |> Remoting.withRouteBuilder NewslettersAPI.RouteBuilder
-    |> Remoting.fromValue (myApi mailchimpApiKey)
+    |> Remoting.fromValue (myApi log mailchimpApiKey)
     |> Remoting.buildHttpHandler
 
 [<FunctionName("Index")>]
@@ -42,6 +46,6 @@ let run ([<HttpTrigger (AuthorizationLevel.Anonymous, Route = "{*any}")>] req : 
     hostingEnvironment.ContentRootPath <- context.FunctionAppDirectory
     let func = Some >> Task.FromResult
     task {
-        let! _ = (webApp cfg.["MailchimpApiKey"]) func req.HttpContext
+        let! _ = (webApp log cfg.["MailchimpApiKey"]) func req.HttpContext
         req.HttpContext.Response.Body.Flush() //workaround https://github.com/giraffe-fsharp/Giraffe.AzureFunctions/issues/1
     } :> Task    

@@ -21,4 +21,4 @@ let update (msg : Msg) (state : State) : State * Cmd<Msg> =
     match msg with
     | EmailChanged v -> { state with SubscribeEmail = v }, Cmd.none
     | Subscribe -> { state with IsLoading = true }, Cmd.OfAsync.perform Server.authAPI.Subscribe state.SubscribeEmail (fun _ -> Subscribed)
-    | Subscribed -> { state with IsLoading = false }, Cmd.none
+    | Subscribed -> { state with IsLoading = false; IsSubscribed = true }, Cmd.none

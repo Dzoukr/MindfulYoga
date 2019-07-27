@@ -40,16 +40,23 @@ let footerDiv (state:State) dispatch =
     let sendBtn =
         let isDisabled = state.SubscribeEmail |> MindfulYoga.Shared.Validation.isValidEmail |> not
         if state.IsSubscribed then
-            div [] [
-                Button.a [ ] [ i [ ClassName "fas fa-check" ] []; span [ Style [ MarginLeft 5 ]] [ str "Přihlášeno"] ]
+            Button.a [ ] [ 
+                i [ ClassName "fas fa-check" ] [] 
+                span [ Style [ MarginLeft 5 ] ] [ str "Přihlášeno"]
             ]
         else            
             match state.IsLoading with
             | true -> 
-                Button.a [ ] [ i [ ClassName "fas fa-circle-notch fa-spin" ] [] ]
+                Button.a [ ] [ 
+                    str "..."
+                ]
             | false ->
                 let props = if isDisabled then [ Button.Disabled isDisabled ] else [Button.OnClick (fun _ -> Subscribe |> dispatch)]
-                Button.a props [ str "Odeslat" ]                    
+                Button.a props [ 
+                    str "Odeslat"
+                ]
+
+    let loadingClass = if state.IsLoading then "is-loading" else ""
 
     footer [ Class "footer"] [
         Container.container [] [
@@ -74,8 +81,11 @@ let footerDiv (state:State) dispatch =
                             Content.content [] [
                                 h3 [] [ str "Přihlásit k odběru newsletteru" ]
                                 Field.div [ Field.IsGrouped ] [
-                                    p [ Class "control is-expanded"] [
-                                        Input.email [ Input.Placeholder "Vložit email"; Input.OnChange (fun e -> !!e.target?value |> EmailChanged |> dispatch) ]
+                                    p [ Class ("control is-expanded " + loadingClass)] [
+                                        Input.email [ 
+                                            Input.Placeholder "Vložit email"
+                                            Input.OnChange (fun e -> !!e.target?value |> EmailChanged |> dispatch)
+                                        ]
                                     ]
                                     p [ Class "control" ] [
                                         sendBtn
