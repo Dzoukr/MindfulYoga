@@ -45,7 +45,8 @@ let view =
                         a [ Href "https://dum-jogy.cz/akce-a-balicky/joga-na-vysehrade.html" ] [ str "Více info"]
                         br []
 
-                        strong [] [ str "Pondělí 12.8." ]
+                        strong [ Class "strikethrough" ] [ str "Pondělí 12.8." ]
+                        strong [] [ str " PŘESUNUTO NA STŘEDU 14.8." ]
                         str " Park nám. Odboje, Kostelec nad Labem, 19:00 – 20:10, cena 110Kč/70min. "
                         contact
                         br []
