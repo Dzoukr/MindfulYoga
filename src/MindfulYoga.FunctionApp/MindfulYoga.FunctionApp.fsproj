@@ -13,6 +13,7 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
     <Compile Include="Web.fs" />
+    <Compile Include="TrademarkChecker.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MindfulYoga.Shared\MindfulYoga.Shared.fsproj" />
