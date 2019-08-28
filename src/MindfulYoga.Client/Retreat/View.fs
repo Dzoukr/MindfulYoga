@@ -25,7 +25,7 @@ let view =
                 a [ Class "mindful-link"; Href Router.MindfulYoga.Path; OnClick Router.goToUrl ] [ str "mindful yogy®"]
                 str " osvěžíme tělo, mysl i ducha. Užijeme si moment TADY A TEĎ."
             ]
-            h3 [] [ str "Program"]
+            h3 [] [ str "Program:"]
             p [] [
                 withBr "Pátek:"
                 withBr "18:30 Večeře"
