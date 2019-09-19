@@ -47,7 +47,7 @@ let view =
                 "Přesný rozvrh doladíme na místě podle naplánovaných výletů"
                 "Dynamika lekcí se bude odvíjet podle aktuálního naladění a rozpoložení skupiny (hatha flow, jemná jóga, zdravá záda, jin jóga)"
                 "Ranní lekce budou probíhat v nádherné shalle v pěší vzdálenosti cca 300 m od ubytování (viz. video níže) a podvečerní lekce v zahradě resortu" 
-                "Dne 25.3. proběhne na ostrově svátek Nyepi neboli Den ticha (Silence Day), který je zároveň i oslavou hinduistického Nového roku. My využijeme tuto příležitost a k tichu se přidáme. Čeká nás povalování u bazénu, čtení knížek, meditace … a večer pozorování hvězd na obloze 😊"   
+                "Dne 25.3. proběhne na ostrově svátek Nyepi neboli Den ticha (Silence Day), který je zároveň i oslavou hinduistického Nového roku. My využijeme tuto příležitost a k tichu se přidáme. Čeká nás relaxování u bazénu, čtení knížek, meditace … a večer pozorování hvězd na obloze 😊"   
             ] |> inList |> List.singleton |> div []
             div [ DangerouslySetInnerHTML { __html = """<video controls><source src="http://mandalavillagebali.com/wp-content/uploads/2017/08/Yoga.mov" type="video/mp4"></video>""" }] [ ]
             
@@ -63,14 +63,16 @@ let view =
         textSection [    
             h2 [] [ str "Výlety" ]
             [
-                "Výlet do vnitrozemí ostrova: chrám Tirta Empul - nejposvátnější místo s léčivými prameny, majestátné hrobky Gunung Kawi - údolí královen, návštěva ikonických terasovitých rýžových polí TEGALALANG"
+                "Výlet do vnitrozemí ostrova: chrám Tirta Empul - nejposvátnější místo s léčivými prameny, majestátné hrobky Gunung Kawi - údolí královen, návštěva ikonických terasovitých rýžových polí Tegalalang"
                 "Návštěva Ubudu (města z filmu Jíst, meditovat, milovat) – město mezi rýžovými políčky, které je centrem kulturního a duchovního života, Monkey Forest – opičí prales, Goa Gajah - posvátná jeskyně Ganéši, Ubud Market - návštěva obchůdků"
                 "Canggu. Strávení dne v Canggu, které je oblíbené díky nejúžasnějšímu pouličnímu umění, spoustě příjemných kavárniček a rozmanité kuchyně. Navštívíme Tanah Lot Temple, který se nachází 300 metrů od pobřeží na skále v oceánu a je jedním z nejslavnějších chrámů na Bali. Je to posvátné místo a mnozí věří, že chrám chrání ostrov před zlými mořskými duchy." 
                 "Uluwatu. Výlet na jednu z nejkrásnějších pláží ostrova Uluwatu, návštěva chrámu Pura Luhur Uluwatu a jako vrchol dne shlédnutí Kecak Fire Dance u chrámu při západu slunce. Kecak Dance neboli Opičí tanec je velkolepá show, která vypráví starý tradiční balijský příběh o princezně Sitě a princovi Rámovi." 
                 "Jimbaran. Jimbaran je malá rybářská vesnička, prohlídneme si městečko, obchůdky, podíváme se na pláž s jemným pískem a den zakončíme večeří přímo na pláži při západu slunce." 
-                "V ceně 5x za pobyt pronájem auta s řidičem na celodenní výlet. Na nás bude zaplatit si jen případné vstupy a občerstvení." 
-                "To je jen takový možný nástin strávení dní na Bali, na přesném programu se domluvíme na místě, nebo si uděláte program vlastní, můžete se také potápět, šnorchlovat, naučit se surfovat, záleží jen na Vás 😊"
             ] |> inList |> List.singleton |> div []
+            
+            withBr "V ceně 5x za pobyt pronájem auta s řidičem na celodenní výlet. Na nás bude zaplatit si jen případné vstupy a občerstvení."
+            withBr ""
+            withBr "To je jen takový možný nástin strávení dní na Bali, na přesném programu se domluvíme na místě, nebo si uděláte program vlastní, můžete se také potápět, šnorchlovat, naučit se surfovat, záleží jen na Vás 😊"
         ]
         section [ Class "display-grid"; Style [ MarginBottom -10 ]] [
             img [ Src "../img/bali-strip3.png" ]
@@ -91,14 +93,16 @@ let view =
                 [
                     "Odlet 16.3. v 15:30 s přestupem v Dubaji (1h 35min na přestup), na Bali dorazíme ve 14:50 místního času. Ubytujeme se, dojdeme si na večeři a půjdeme si lehnout, tím vyrovnáme časový posun." 
                     "Zpět 29.3. v 00:05 s přestupem v Dubaji (3h 35min na přestup), do Prahy dorazíme ve 13:00 místního času."
-                    "Sejdeme se dvě hodiny před odletem na letišti." 
                 ] |> inList
+                withBr "Sejdeme se dvě hodiny před odletem na letišti." 
                 withBr "Případně si zvolte jakýkoliv jiný let, který Vám bude vyhovovat 😊"
             ]
             
             h2 [] [ str "Cena" ]
             p [] [
-                withBr "Cena 20 990 Kč, spolupracuji s CK fit, kde si můžete také svůj zájezd zarezervovat."
+                withBr "Cena 20 990 Kč."
+                str "Svůj pobyt si můžete objednat zde: "
+                a [ Href "https://www.ckfit.cz/bali/mindful-jogovy-retreat-v-indonesii-s-janou-provaznikovou/?ProductTypeID=1126" ] [ str "www.ckfit.cz/bali/mindful-jogovy-retreat-v-indonesii-s-janou-provaznikovou" ]
                 withBr ""
                 withBr "Jakékoliv dotazy směřujte prosím buď mně na tel. čísle 777 835 160 nebo přes email jana@mindfulyoga.cz, případně na Ing. Andreu Podlipskou (CK Fit) na tel. čísle 603 118 624 nebo přes email na info@ckfit.cz"
             ]
