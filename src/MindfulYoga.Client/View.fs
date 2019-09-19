@@ -27,7 +27,8 @@ let menu (state:State) dispatch =
             Navbar.End.div [] [
                 item Router.MindfulYoga "Mindful Yoga"
                 item Router.AboutMe "O mně"
-                item Router.Retreat "Retreat"
+                item Router.Retreat "Podzimní retreat"
+                item Router.Bali2020 "Bali 2020"
                 item Router.Lessons "Lekce"
                 item Router.IndividualLessons "Individuální lekce"
                 item Router.CompanyLessons "Jóga pro firmy"
@@ -109,6 +110,7 @@ let render (state : State) (dispatch : Msg -> unit) =
         | Router.IndividualLessons -> IndividualLessons.View.view
         | Router.CompanyLessons -> CompanyLessons.View.view
         | Router.Contact -> Contact.View.view
+        | Router.Bali2020 -> Bali2020.View.view
     
     let showFooter =
         match state.Page with

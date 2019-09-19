@@ -13,6 +13,7 @@
         <Compile Include="AboutMe\View.fs" />
         <Compile Include="MindfulYoga\View.fs" />
         <Compile Include="Retreat\View.fs" />
+        <Compile Include="Bali2020\View.fs" />
         <Compile Include="Lessons\View.fs" />
         <Compile Include="IndividualLessons\View.fs" />
         <Compile Include="CompanyLessons\View.fs" />
