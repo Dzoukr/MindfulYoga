@@ -15,6 +15,7 @@ type Page =
     | IndividualLessons
     | CompanyLessons
     | Contact
+    | SriLanka2020
     with
         member x.Path = 
             match x with
@@ -25,6 +26,7 @@ type Page =
             | IndividualLessons -> "/individualni-lekce"
             | CompanyLessons -> "/joga-pro-firmy"
             | Contact -> "/kontakt"
+            | SriLanka2020 -> "/srilanka2020"
         static member Default = MindfulYoga
 
 
@@ -40,6 +42,7 @@ let pageParser: Parser<Page -> Page, Page> =
         map IndividualLessons (s Page.IndividualLessons.Path)
         map CompanyLessons (s Page.CompanyLessons.Path)
         map Contact (s Page.Contact.Path)
+        map SriLanka2020 (s Page.SriLanka2020.Path)
     ]
 
 let goToUrl (e: MouseEvent) =

@@ -17,6 +17,7 @@ let view =
         emptySection
         textSection [
             h1 [] [ str "Mindful Yoga Retreat v Tuněchodském Mlýně "]
+            h3 [] [ str "Víkend 1. - 3. 11. 2019" ]
             p [] [
                 str "Srdečně Vás zvu ke společnému víkendu na krásném místě v Jižních Čechách. Tuněchodský Mlýn je klidné místo na samotě uprostřed krásné přírody, kde prý potkáte spíše srnku nebo lišku než člověka."
             ]
