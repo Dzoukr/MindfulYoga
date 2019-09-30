@@ -13,6 +13,7 @@ let withBr txt =
     ] |> span []
     
 let inP txt = p [] [ str txt ]
+let inPraw txt = p [ DangerouslySetInnerHTML { __html = txt }] [ ]
 
 let view =
     div [ Class "srilanka2020"] [
@@ -25,7 +26,7 @@ let view =
             inP "Na Srí Lance naleznete nádhernou flóru i faunu tropického pásma, úchvatné pobřeží, čajové plantáže, prastaré chrámy chráněné UNESCO a národní přírodní parky, které se hemží zvířaty, včetně slonů, opic a jedné z největších populací leopardů na světě."
             inP "Srílančané jsou stále usměvaví, otevření a dobrosrdeční lidé."
             inP "Těšit se můžeme na pobyt na jihozápadním pobřeží Srí Lanky, v živém městečku Hikkaduwa."
-            inP "V Hikkaduwě je řada výborných restaurací s místní i světovou kuchyní, spousta příjemných kavárniček a obchůdků s pouličním uměním, tropickým ovocem a místními výrobky. V každé restauraci se za málo peněz skvěle najíte a pochutnáte si na úžasném smoothie z čerstvého ovoce. Na břehu oceánu naleznete chovnou stanici mořských želv."
+            inP "V Hikkaduwě je řada výborných restaurací s místní i světovou kuchyní, spousta příjemných kavárniček a obchůdků s pouličním uměním, tropickým ovocem a místními výrobky. V každé restauraci se za málo peněz skvěle najíte a pochutnáte si na úžasném smoothie z čerstvého ovoce. Na břehu oceánu naleznete záchrannou stanici mořských želv."
             
             h2 [] [ str "Ubytování:" ]
             
@@ -96,8 +97,12 @@ let view =
         textSection [
             inP "Cena 14 900 Kč za ubytování se snídaní, jógovou a meditační praxi, organizaci."
             inP "Omezená kapacita 12 lidí!"
-            inP """Cena nezahrnuje letenku, pojištění a poplatek za vízum. Se vším Vám v případě zájmu pomůže Iva Jonášová z CK Nabosotours.
-                U ní si můžete svůj zájezd od pondělí 30. 9. zarezervovat."""
-            inP "Neváhejte se na cokoliv ptát. Své dotazy směřujte prosím buď na mě (777 835 160, jana@mindfulyoga.cz) nebo na Ivu Jonášovou (774 128 513, ivaj@nabosotours.cz)."
+            inP "Cena nezahrnuje letenku, pojištění a poplatek za vízum."
+            inPraw """Se vším Vám v případě zájmu pomůže Iva Jonášová  (774 128 513, ivaj@nabosotours.cz) z CK Nabosotours, 
+                        kde si můžete již nyní svůj zájezd <strong><a href="https://www.nabosotours.cz/sri-lanka-hikkaduwa-mindful-yoga-retreat-s%C2%A0janou-provaznikovou/">zarezervovat.</a></strong>
+                        <br/>
+                        <a href="https://www.nabosotours.cz/sri-lanka-hikkaduwa-mindful-yoga-retreat-s%C2%A0janou-provaznikovou/">https://www.nabosotours.cz/sri-lanka-hikkaduwa-mindful-yoga-retreat-s janou-provaznikovou/</a>
+                    """                
+            inP "Neváhejte se na cokoliv ptát. Své dotazy směřujte prosím buď na mě (777 835 160, jana@mindfulyoga.cz) nebo na Ivu Jonášovou."
         ]
     ]
