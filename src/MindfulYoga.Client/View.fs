@@ -30,6 +30,7 @@ let menu (state:State) dispatch =
                 item Router.Retreat "Podzimní retreat"
                 item Router.SriLanka2020 "Srí Lanka 2020"
                 item Router.Lessons "Lekce"
+                item Router.Workshops "Workshopy"
                 item Router.IndividualLessons "Individuální lekce"
                 item Router.CompanyLessons "Jóga pro firmy"
                 item Router.Contact "Kontakt"
@@ -111,7 +112,8 @@ let render (state : State) (dispatch : Msg -> unit) =
         | Router.CompanyLessons -> CompanyLessons.View.view
         | Router.Contact -> Contact.View.view
         | Router.SriLanka2020 -> SriLanka2020.View.view
-    
+        | Router.Workshops -> Workshops.View.view
+        
     let showFooter =
         match state.Page with
         | Router.Contact -> false

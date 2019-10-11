@@ -1,6 +1,5 @@
 module MindfulYoga.Client.SriLanka2020.View
 
-open Fulma
 open Fable.React
 open Fable.React.Props
 open MindfulYoga.Client
@@ -11,9 +10,6 @@ let withBr txt =
         str txt
         br []
     ] |> span []
-    
-let inP txt = p [] [ str txt ]
-let inPraw txt = p [ DangerouslySetInnerHTML { __html = txt }] [ ]
 
 let view =
     div [ Class "srilanka2020"] [

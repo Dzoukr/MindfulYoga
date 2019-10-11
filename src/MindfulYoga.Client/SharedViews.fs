@@ -39,3 +39,8 @@ let inList c =
         ]
     )
     |> ul [ Class "fa-ul" ]
+    
+let inP txt = p [] [ str txt ]
+
+let inPraw txt = p [ DangerouslySetInnerHTML { __html = txt }] [ ]
+    

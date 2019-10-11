@@ -18,6 +18,7 @@
         <Compile Include="IndividualLessons\View.fs" />
         <Compile Include="CompanyLessons\View.fs" />
         <Compile Include="Contact\View.fs" />
+        <Compile Include="Workshops\View.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
     </ItemGroup>
