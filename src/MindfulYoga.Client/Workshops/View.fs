@@ -15,10 +15,12 @@ let view =
             inP "V teoretické části se seznámíme s mindfulness a objasníme si, co je všímavá (mindful) jóga a jak všímavost integrovat do pohybu. Projdeme několik meditací a ve dvou blocích cvičení se naučíme kotvit v přítomnosti skrze prohlubování pozornosti a uvědomování si našeho těla."
             inP "Workshop proběhne ve třech termínech:"
             inList [ "10. listopadu 2019"; "19. ledna 2020"; "5. dubna 2020" ]
-            inPraw "v čase od <strong>9:30 - 16:00</strong>."
+            inP "v čase od 9:30 - 16:00."
             inP "Dům jógy, metro Anděl, Ostrovského 11/16, Praha 5"
             inP "Cena: 1450,- Kč, rezervační záloha: 650,- Kč"
-            ]
+            inPraw "Rezervace: <a href='https://dum-jogy.cz/kurzy-a-pobyty/kurzy-a-workshopy/joga-pro-klidnou-mysl.html'>https://dum-jogy.cz/kurzy-a-pobyty/kurzy-a-workshopy/joga-pro-klidnou-mysl.html</a>"
+
+        ]
         emptySection
         textSection [
             h1 [] [ str "Osmitýdenní kurz mindfulness RMT" ]
