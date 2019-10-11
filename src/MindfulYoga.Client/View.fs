@@ -30,7 +30,7 @@ let menu (state:State) dispatch =
                 item Router.Retreat "Podzimní retreat"
                 item Router.SriLanka2020 "Srí Lanka 2020"
                 item Router.Lessons "Lekce"
-                item Router.Workshops "Workshopy"
+                item Router.Workshops "Workshopy / RMT kurzy"
                 item Router.IndividualLessons "Individuální lekce"
                 item Router.CompanyLessons "Jóga pro firmy"
                 item Router.Contact "Kontakt"
