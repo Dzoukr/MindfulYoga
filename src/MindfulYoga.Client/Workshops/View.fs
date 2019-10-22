@@ -23,6 +23,27 @@ let view =
         ]
         emptySection
         textSection [
+            h1 [] [ str "YIN YOGA & MINDFULNESS vol. 1-2" ]
+                        
+            inP "V období podzimu nás sama příroda nabádá k uchýlení se do sebe a k odpočinku.  I mě to vede tímto směrem. Jinová praxe se hlásí mnohem více o slovo, než tomu bylo v předchozích teplých měsících."
+            inP "Ráda bych se o požitek, uvolnění a relaxaci s Vámi podělila, a tak si Vás dovoluji pozvat na dva workshopy YIN YOGA & MINDFULNESS."
+            inP "Yin Yoga, původně známá jako taoistická jóga, nás vede k nacházení ticha a klidu uvnitř nás. Vytváří prostor k pozornému naslouchání vlastnímu tělu, opětovnému napojení se něj a směřuje nás tak plnému prožívání sama sebe."
+            inP "Jejím cílem je rozpouštění blokád na energetických drahách (meridiánech), aby mohla energie volně proudit a naše tělo se udrželo ve zdraví. Je pro ni charakteristické dlouhé spočinutí v pozicích (3 - 5minut), kterým působíme na hluboké pojivové tkáně tj. fascie, protahujeme je a znovuobnovujeme elasticitu těla."
+            inP "Propojením jin jógy a meditace všímavosti (mindfulness) vytváříme silné možnosti transformace a holistického léčení na všech vrstvách bytí - těle, mysli a srdci. Meditace uklidňuje mysl, snižuje stres / úzkost a podporuje naši schopnost být v životě více přítomný. Studie ukazují, že meditace zlepšuje zdraví mozku a imunitního systému, snižuje krevní tlak, zlepšuje kvalitu spánku a dává nám více energie k užívání si radostí života."
+            inP "Ve dvou workshopech se zaměříme na usměrnění toku energie v meridiánu tlustého střeva a plic, jejichž činnost v měsících listopadu a prosinci vrcholí. Uvolníme hrudník, zvýšíme mobilitu ramen a protáhneme linie našich paží. Protahovat budeme ale i naše kyčle, přední a zadní stranu těla."
+            inP "Přijďte se zastavit a načerpat energii v tomto předvánočním čase."
+            inP "Workshopy proběhnou:"
+            inList ["24. 11. 2019"; "8. 12. 2019"]
+            inP "v časech 18:30 – 20:30."
+            inP "Místo: GaPa, Centrum volného času, U pošty 822, Kostelec nad Labem"
+            
+            inP "Cena: 350 Kč za jeden workshop, 600 Kč za oba workshopy. Platba v hotovosti nebo převodem na účet 1681695016/3030 (do poznámky uveďte celé své jméno)"
+            inP "Kapacita: 10 osob"
+            inPraw "Přihlášení: <a href='mailto:jana@mindfulyoga.cz'>jana@mindfulyoga.cz</a>, 777 835 160"
+            inPraw "<i>Storno podmínky: Po přihlášení na akci nutno do 5 dnů uhradit v plné výši buď hotově nebo převodem, jinak rezervace zaniká. Při stornu do 7 dnů před konáním akce 100% částky zpět. Později je platba nevratná, místo možno převést na jinou osobu.</i>"
+        ]
+        emptySection
+        textSection [
             h1 [] [ str "Osmitýdenní kurz mindfulness RMT" ]
             inP "Chcete se naučit lépe zvládat stres, získat větší nadhled v mezilidských vztazích, nebo zlepšit své komunikační dovednosti?"
             inP "Zvu Vás k účasti na 8-týdenním programu Relational Mindfulness Training (RMT), který se zaměřuje na rozvoj mindfulness (všímavosti) v komunikaci a interakci s druhými lidmi."
