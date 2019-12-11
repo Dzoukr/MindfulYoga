@@ -4,6 +4,7 @@ open System
 open Microsoft.Azure.WebJobs
 open Microsoft.Extensions.Logging
 open FSharp.Control.Tasks.V2
+open Microsoft.Azure.WebJobs.Extensions.DurableTask
 open System.IO
 open System.IO.Compression
 open System.Text
@@ -81,24 +82,24 @@ let onTrademarkFoundActivity ([<ActivityTrigger>] input: string list * DateTime,
     }
 
 [<FunctionName("CheckTrademarkOrchestration")>]
-let checkTrademarkOrchestration ([<OrchestrationTrigger>] ctx: DurableOrchestrationContext, log : ILogger) =
+let checkTrademarkOrchestration ([<OrchestrationTrigger>] ctx: IDurableOrchestrationContext, log : ILogger) =
     let logInfo i = if not ctx.IsReplaying then log.LogInformation i
     let logWarning i = if not ctx.IsReplaying then log.LogWarning i
     
     task {
-        let date = ctx.GetInput<DateTime>()
-        let! founds = ctx.CallActivityAsync<string list>("CheckForNewTrademarksActivity", date)
+        let input = ctx.GetInput<{| Date : DateTime |}>()
+        let! founds = ctx.CallActivityAsync<string list>("CheckForNewTrademarksActivity", input.Date)
         match founds with
         | [] -> logInfo "Nothing interesting found"
         | founds ->
             logWarning "Search phrase found!"
-            do! ctx.CallActivityAsync("OnTrademarkFoundActivity", (founds, date))
+            do! ctx.CallActivityAsync("OnTrademarkFoundActivity", (founds, input.Date))
         return ()
     }
 
 [<FunctionName("CheckTrademarkStarter")>]
-let checkTrademarkStarter ([<TimerTrigger("0 0 12 * * *")>] timer: TimerInfo, [<OrchestrationClient>] client:DurableOrchestrationClient, log : ILogger) =
+let checkTrademarkStarter ([<TimerTrigger("0 0 12 * * *")>] timer: TimerInfo, [<DurableClient>] client:IDurableOrchestrationClient, log : ILogger) =
     task {
-        let! _ = client.StartNewAsync("CheckTrademarkOrchestration", DateTime.UtcNow.Date)
+        let! _ = client.StartNewAsync("CheckTrademarkOrchestration", {| Date = DateTime.UtcNow.Date |})
         return ()
     }

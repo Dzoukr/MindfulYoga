@@ -1,5 +1,6 @@
-FSharp.Core
-Newtonsoft.Json
-Microsoft.FSharpLu.Json
-TaskBuilder.fs
-Mailjet.Api
+group Libraries
+    FSharp.Core
+    Newtonsoft.Json
+    Microsoft.FSharpLu.Json
+    TaskBuilder.fs
+    Mailjet.Api

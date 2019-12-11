@@ -13,18 +13,15 @@ trigger:
 
 steps:
 - task: DotNetCoreInstaller@0
-  displayName: Installing .net core sdk 2.2.300
+  displayName: Installing .net core sdk
   inputs:
-    version: '2.2.300'
+    version: '3.1.100'
     packageType: sdk
 
-- script: dotnet tool install --tool-path . paket
-  displayName: 'Install Paket'
+- script: dotnet tool restore
+  displayName: 'Restore tools'
 
-- script: dotnet tool install --tool-path . fake-cli
-  displayName: 'Install FAKE'
-
-- script: ./fake build -t publishFunctionApp
+- script: dotnet fake build -t publishFunctionApp
   displayName: 'Build'
 
 - task: PublishBuildArtifacts@1

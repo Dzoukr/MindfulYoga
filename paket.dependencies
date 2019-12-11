@@ -1,36 +1,40 @@
-version 5.215.0
-source https://api.nuget.org/v3/index.json
-framework: netstandard2.0, netcoreapp2.2
-storage: none
+group Server
+    source https://api.nuget.org/v3/index.json
+    storage: none
+    framework: auto-detect
+    nuget FSharp.Core
+    nuget Giraffe
+    nuget Microsoft.NET.Sdk.Functions
+    nuget Microsoft.Azure.WebJobs.Extensions.Storage
+    nuget Microsoft.Azure.WebJobs.Extensions.DurableTask
+    nuget WindowsAzure.Storage
+    nuget Fable.Remoting.Giraffe
+    nuget MailChimp.Net.V3
 
-// Shared dependencies
-nuget FSharp.Core
-nuget Microsoft.FSharpLu.Json
-nuget Newtonsoft.Json
-nuget TaskBuilder.fs
+group Libraries
+    source https://api.nuget.org/v3/index.json
+    storage: none
+    framework: auto-detect
+    nuget FSharp.Core
+    nuget Mailjet.Api
+    nuget Microsoft.FSharpLu.Json
+    nuget Newtonsoft.Json
+    nuget TaskBuilder.fs
 
-// Azure functions
-nuget Giraffe
-nuget Microsoft.NET.Sdk.Functions
-nuget Microsoft.Azure.WebJobs.Extensions.Storage
-nuget Microsoft.Azure.WebJobs.Extensions.DurableTask
-nuget WindowsAzure.Storage
-nuget Fable.Remoting.Giraffe
-nuget MailChimp.Net.V3
-
-// Libraries
-nuget Mailjet.Api
-
-// Client
-nuget Fable.Core ~> 3
-nuget Fable.Elmish ~> 3
-nuget Fable.Elmish.Debugger ~> 3
-nuget Fable.Elmish.HMR ~> 4
-nuget Fable.Elmish.React ~> 3
-nuget Fable.Elmish.Browser ~> 3
-nuget Fable.React ~> 5
-nuget Fable.Remoting.Client ~> 5
-nuget Fulma ~> 2
+group Client
+    source https://api.nuget.org/v3/index.json
+    storage: none
+    framework: auto-detect
+    nuget FSharp.Core
+    nuget Fable.Core
+    nuget Fable.Elmish.Debugger
+    nuget Fable.Elmish.React
+    nuget Fable.Elmish.HMR
+    nuget Feliz
+    nuget Feliz.Router
+    nuget Feliz.Bulma
+    nuget Fulma
+    nuget Fable.Remoting.Client
 
 group Build
     source https://api.nuget.org/v3/index.json

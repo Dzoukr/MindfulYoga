@@ -1,10 +1,19 @@
 module MindfulYoga.Client.View
 
 open Domain
+open Fable.Core
 open Fulma
 open Fable.React
 open Fable.React.Props
 open Fable.Core.JsInterop
+
+// load icons
+[<Fable.Core.ImportAll("@fortawesome/fontawesome-free/js/all.min.js")>]
+let fontAwesome : unit = jsNative
+
+// attach icons
+fontAwesome
+
 
 let menu (state:State) dispatch =
     let burgerMenuClass = if state.BurgerMenuVisible then "is-active" else ""

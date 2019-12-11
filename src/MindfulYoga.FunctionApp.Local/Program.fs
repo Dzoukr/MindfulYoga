@@ -1,6 +1,5 @@
-﻿// Learn more about F# at http://fsharp.org
+﻿module MindfulYoga.FunctionApp.Local.Program
 
-open System
 open System.Diagnostics
 open System.IO
 

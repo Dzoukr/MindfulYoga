@@ -12,23 +12,25 @@ open Microsoft.Extensions.Configuration
 open System
 open Fable.Remoting.Server
 open Fable.Remoting.Giraffe
+open FSharp.Control.Tasks
+
+let subscribe (log:ILogger) (mailchimpApiKey:string) email =
+    task {
+        let mailChimpManager = MailChimp.Net.MailChimpManager(mailchimpApiKey)
+        try
+            let! lists = mailChimpManager.Lists.GetAllAsync()
+            let list = lists |> Seq.head
+            let contact = new MailChimp.Net.Models.Member(EmailAddress = email, StatusIfNew = MailChimp.Net.Models.Status.Subscribed)
+            let! _ = mailChimpManager.Members.AddOrUpdateAsync(list.Id, contact)
+            return ()
+        with ex -> 
+            log.LogError(ex.Message)
+            return ()
+    }
 
 let myApi (log:ILogger) (mailchimpApiKey:string) = 
     {
-        Subscribe = (fun email ->
-            let mailChimpManager = MailChimp.Net.MailChimpManager(mailchimpApiKey)
-            task {
-                try
-                    let! lists = mailChimpManager.Lists.GetAllAsync()
-                    let list = lists |> Seq.head
-                    let contact = new MailChimp.Net.Models.Member(EmailAddress = email, StatusIfNew = MailChimp.Net.Models.Status.Subscribed)
-                    let! _ = mailChimpManager.Members.AddOrUpdateAsync(list.Id, contact)
-                    return ()
-                with ex -> 
-                    log.LogError(ex.Message)
-                    return ()
-            } |> Async.AwaitTask
-        )
+        Subscribe = subscribe log mailchimpApiKey >> Async.AwaitTask
     }
 
 let webApp log mailchimpApiKey =
@@ -37,15 +39,12 @@ let webApp log mailchimpApiKey =
     |> Remoting.fromValue (myApi log mailchimpApiKey)
     |> Remoting.buildHttpHandler
 
+open FSharp.Control.Tasks
+
 [<FunctionName("Index")>]
 let run ([<HttpTrigger (AuthorizationLevel.Anonymous, Route = "{*any}")>] req : HttpRequest, context : ExecutionContext, log : ILogger) =
-    
     let cfg = (ConfigurationBuilder()).AddJsonFile("local.settings.json", true).AddEnvironmentVariables().Build()
-
     let hostingEnvironment = req.HttpContext.GetHostingEnvironment()
     hostingEnvironment.ContentRootPath <- context.FunctionAppDirectory
     let func = Some >> Task.FromResult
-    task {
-        let! _ = (webApp log cfg.["MailchimpApiKey"]) func req.HttpContext
-        req.HttpContext.Response.Body.Flush() //workaround https://github.com/giraffe-fsharp/Giraffe.AzureFunctions/issues/1
-    } :> Task    
+    webApp log cfg.["MailchimpApiKey"] func req.HttpContext
