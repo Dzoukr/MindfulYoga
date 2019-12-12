@@ -126,16 +126,16 @@ let view state dispatch =
                 withBr ""
                 withBr "Těším se na Vás!"
             ]
-            Bulma.section [
-                Bulma.columns [
-                    Bulma.column [ column.is2 ]
-                    Bulma.column [
-                        Html.h1 [ prop.text "Rezervujte si své místo na retreatu"; prop.style [ style.marginBottom (length.rem 2) ] ]
-                        emailForm state dispatch
-                    ]
-                    Bulma.column [ column.is2 ]
-                ]
-            ]
+//            Bulma.section [
+//                Bulma.columns [
+//                    Bulma.column [ column.is2 ]
+//                    Bulma.column [
+//                        Html.h1 [ prop.text "Rezervujte si své místo na retreatu"; prop.style [ style.marginBottom (length.rem 2) ] ]
+//                        emailForm state dispatch
+//                    ]
+//                    Bulma.column [ column.is2 ]
+//                ]
+//            ]
         ]
         Html.section [
             prop.className "display-grid"
