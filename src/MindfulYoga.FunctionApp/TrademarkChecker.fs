@@ -9,7 +9,7 @@ open System.IO
 open System.IO.Compression
 open System.Text
 open Microsoft.Extensions.Configuration
-open MindfulYoga.Libraries.Emails
+open MindfulYoga.Libraries.Emails.MailjetProvider
 
 let getUrl (date:DateTime) =
     date.AddDays(-1.).ToString("dd-MM-yyyy")
@@ -62,8 +62,8 @@ let onTrademarkFoundActivity ([<ActivityTrigger>] input: string list * DateTime,
     // config
     let cfg = (ConfigurationBuilder()).AddJsonFile("local.settings.json", true).AddEnvironmentVariables().Build()
     let emailSender = 
-        ({ ApiKey = cfg.["MailjetApiKey"]; SecretKey = cfg.["MailjetSecretKey"] } : MailjetProvider.Configuration) 
-        |> MailjetProvider.create
+        ({ ApiKey = cfg.["MailjetApiKey"]; SecretKey = cfg.["MailjetSecretKey"] } : MailjetEmailConfiguration) 
+        |> createEmailSender
     let toAddress = { Email = cfg.["MailTo"]; Name = "" }
     let founds,date = input
     // compose message

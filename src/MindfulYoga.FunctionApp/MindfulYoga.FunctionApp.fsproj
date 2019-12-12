@@ -14,6 +14,8 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
     <Compile Include="TrademarkChecker.fs" />
+    <Compile Include="Newsletters\HttpHandlers.fs" />
+    <Compile Include="ContactMe\HttpHandlers.fs" />
     <Compile Include="Web.fs" />
   </ItemGroup>
   <ItemGroup>

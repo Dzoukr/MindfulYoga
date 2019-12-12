@@ -9,3 +9,4 @@ group Client
     Feliz.Bulma
     Fulma
     Fable.Remoting.Client
+    Elmish.Toastr

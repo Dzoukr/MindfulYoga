@@ -1,7 +1,7 @@
 .retreat {
-    background-image: url('https://res.cloudinary.com/mindfulyoga/image/upload/c_scale,w_2050/v1556132130/newsletters/mlyn.png'); 
+    background-image: url('../public/img/retreat.jpg'); 
     background-repeat:no-repeat;
     background-position: top;
     background-attachment:fixed;
-    background-size: auto !important;
+    background-size: contain !important;
 }

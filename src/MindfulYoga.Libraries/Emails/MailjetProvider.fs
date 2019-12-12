@@ -5,8 +5,34 @@ open Mailjet.Client.Resources
 open Newtonsoft.Json.Linq
 open FSharp.Control.Tasks.V2
 open System
+open System.Threading.Tasks
 
-type Configuration = {
+type Address = {
+    Email : string
+    Name : string
+}
+
+type EmailMessage = {
+    From: Address
+    To : Address list
+    Cc : Address list
+    Bcc : Address list
+    Subject : string
+    HtmlMessage : string
+    PlainTextMessage : string
+}
+with
+    static member Empty = {
+        From = { Name = ""; Email = ""}
+        To = []
+        Cc = []
+        Bcc = []
+        Subject = ""
+        HtmlMessage = ""
+        PlainTextMessage = ""
+    }
+
+type MailjetEmailConfiguration = {
     ApiKey : string
     SecretKey : string
 }
@@ -37,7 +63,11 @@ let private send (client:MailjetClient) (msg:EmailMessage) =
         return ()
     }
 
-let create (conf:Configuration) =
+type MailjetEmailSender = {
+    Send : EmailMessage -> Task<unit>
+}
+
+let createEmailSender (conf:MailjetEmailConfiguration) =
     let client = MailjetClient(conf.ApiKey, conf.SecretKey)
     client.Version <- ApiVersion.V3_1
     {

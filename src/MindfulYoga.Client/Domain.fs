@@ -1,6 +1,7 @@
 module MindfulYoga.Client.Domain
 
 open Router
+open MindfulYoga.Shared.Validation
 
 type State = {
     Page : Router.Page
@@ -9,6 +10,10 @@ type State = {
     IsLoading : bool
     IsSubscribed : bool
     SubscribeEmail : string
+    
+    EmailForm : MindfulYoga.Shared.ContactMe.Domain.EmailForm
+    EmailFormValidationErrors : ValidationError list
+    IsSending : bool
 }
 with
     static member Init = {
@@ -17,6 +22,9 @@ with
         IsSubscribed = false
         SubscribeEmail = ""
         BurgerMenuVisible = false
+        EmailForm = { Name = ""; Email = ""; Phone = ""; Message = "" }
+        EmailFormValidationErrors = []
+        IsSending = false
     }
 
 type Msg =
@@ -24,3 +32,6 @@ type Msg =
     | EmailChanged of string
     | Subscribe
     | Subscribed
+    | EmailFormChanged of MindfulYoga.Shared.ContactMe.Domain.EmailForm
+    | SendEmailForm
+    | EmailFormSent of MindfulYoga.Shared.Communication.ServerResult<unit>

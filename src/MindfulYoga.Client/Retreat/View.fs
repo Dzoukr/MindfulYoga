@@ -5,6 +5,9 @@ open Fable.React
 open Fable.React.Props
 open MindfulYoga.Client
 open SharedViews
+open Feliz
+open Feliz.Bulma
+open MindfulYoga.Client.Domain
 
 let withBr txt =
     [
@@ -12,40 +15,95 @@ let withBr txt =
         br []
     ] |> span []
 
-let view =
+let emailForm model dispatch =
+    Html.div [
+        Bulma.field [
+            Bulma.label "Jméno a příjmení *"
+            Bulma.control [
+                Bulma.textInput [
+                    ValidationViews.color model.EmailFormValidationErrors (nameof(model.EmailForm.Name))
+                    prop.placeholder "Vaše jméno a příjmení"
+                    prop.onTextChange (fun x -> { model.EmailForm with Name = x } |> EmailFormChanged |> dispatch )
+                ]
+                ValidationViews.help model.EmailFormValidationErrors (nameof(model.EmailForm.Name))
+            ]
+        ]
+        Bulma.field [
+            Bulma.label "Email *"
+            Bulma.control [
+                Bulma.textInput [
+                    ValidationViews.color model.EmailFormValidationErrors (nameof(model.EmailForm.Email))
+                    prop.placeholder "Vaše emailová adresa"
+                    prop.onTextChange (fun x -> { model.EmailForm with Email = x } |> EmailFormChanged |> dispatch )
+                ]
+                ValidationViews.help model.EmailFormValidationErrors (nameof(model.EmailForm.Email))
+            ]
+        ]
+        Bulma.field [
+            Bulma.label "Telefon"
+            Bulma.control [
+                Bulma.textInput [
+                    prop.placeholder "+420 123 456 789"
+                    prop.onTextChange (fun x -> { model.EmailForm with Phone = x } |> EmailFormChanged |> dispatch )
+                ]
+            ]
+        ]
+        Bulma.field [
+            Bulma.label "Zpráva"
+            Bulma.control [
+                Bulma.textarea [
+                    prop.placeholder "Máte nějaký dotaz?"
+                    prop.onTextChange (fun x -> { model.EmailForm with Message = x } |> EmailFormChanged |> dispatch )
+                ]
+            ]
+        ]
+        Bulma.field [
+            Bulma.button [
+                button.isPrimary
+                button.isFullwidth
+                prop.text "Odeslat rezervaci"
+                prop.onClick (fun _ -> SendEmailForm |> dispatch)
+                if model.IsSending then yield! [ button.isLoading; prop.disabled true ]
+            ]
+        ]
+    ]
+
+let view state dispatch =
     div [ Class "retreat"] [
         emptySection
+        
         textSection [
-            h1 [] [ str "Mindful Yoga Retreat v Tuněchodském Mlýně "]
-            h3 [] [ str "Víkend 1. - 3. 11. 2019" ]
-            p [] [
-                str "Srdečně Vás zvu ke společnému víkendu na krásném místě v Jižních Čechách. Tuněchodský Mlýn je klidné místo na samotě uprostřed krásné přírody, kde prý potkáte spíše srnku nebo lišku než člověka."
+            h1 [] [ str "MINDFUL DETOX YOGA RETREAT BOŘETÍNSKÝ STATEK "]
+            h3 [] [ str "Víkend 17. - 19. 4. 2020" ]
+            Html.p "Srdečně Vás zvu ke společnému víkendu na Bořetínském statku. Statek se nachází v malé vesničce, blízko Jindřichova Hradce, na bývalé poutní cestě ke kapli sv. Anny."
+            Html.p "Bořetínský statek byl postaven v 18. století a nedávno byl citlivě zrekonstruován pod taktovkou paní architektky Moniky Krby. Celé stavení je propojené s prostorným dvorem a vesnickou zahradou."
+            Html.p [
+                Html.text "Za ticha přírody kolem nás budeme jógovat, meditovat, odpočívat a naslouchat především sami sobě. Jemnou praxí "
+                Html.a [ prop.className "mindful-link"; prop.href Router.MindfulYoga.Path; prop.onClick Router.goToUrl; prop.text "mindful yogy®" ]
+                Html.text " osvěžíme tělo, mysl i ducha. Užijeme si moment TADY A TEĎ."
             ]
-            p [] [
-                str "Za ticha přírody kolem nás budeme jógovat, meditovat, odpočívat a naslouchat především sami sobě. Jemnou praxí "
-                a [ Class "mindful-link"; Href Router.MindfulYoga.Path; OnClick Router.goToUrl ] [ str "mindful yogy®"]
-                str " osvěžíme tělo, mysl i ducha. Užijeme si moment TADY A TEĎ."
-            ]
+            
+            
             h3 [] [ str "Program:"]
             p [] [
                 withBr "Pátek:"
                 withBr "18:30 Večeře"
-                withBr "19:30 – 21:00 Restorativní mindful yoga"
+                withBr "19:30 – 21:00 Restorativní mindful yoga (meridián jater)"
                 withBr ""
                 withBr "Sobota:"
-                withBr "7:30 – 8:30 Mindful slow flow yoga (mírně dynamická)"
+                withBr "7:30 – 8:30 Mindful slow flow yoga (mírně dynamická, detoxikační praxe)"
                 withBr "8:45 Snídaně"
                 withBr "10:00 – 12:00 Úvod do meditace (meditační techniky, doporučení pro domácí praxi, všímavý rozhovor)"
-                withBr "12:15 Oběd"
+                withBr "12:15 Všímavý oběd (instrukce k mindful eating)"
                 str "Odpoledne výlet ("
-                a [ Href "http://tunechodsky-mlyn.cz/tipy-na-vylet/" ] [ str "http://tunechodsky-mlyn.cz/tipy-na-vylet/" ]
+                a [ Href "https://boretinskystatek.cz/okoli.html" ] [ str "https://boretinskystatek.cz/okoli.html" ]
                 str "), možno po vlastní ose nebo společně"
                 withBr ""
                 withBr "18:00 Večeře"
-                withBr "19:30 – 21:00 Mindful yoga pro zdravá záda"
+                withBr "19:30 – 21:00 Mindful yoga (jemná večerní praxe)"
                 withBr ""
                 withBr "Neděle"
-                withBr "7:30 – 8:30 Mindful slow flow yoga (mírně dynamická)"
+                withBr "7:30 – 8:30 Mindful slow flow yoga (mírně dynamická, detoxikační praxe)"
                 withBr "10:00 – 12:00 Všímavá procházka (meditace v chůzi, hry na rozvíjení všímavosti)"
                 withBr "12:15 Oběd"
                 withBr "Ukončení programu a odjezd"
@@ -54,26 +112,33 @@ let view =
             ]
             h3 [] [ str "Ubytování:" ]
             p [] [
-                str "Jednoduše zařízené dvojlůžkové a třílůžkové pokoje. Některé s vlastním sociálním zařízením, některé se sociálním zařízením sdíleným."
+                str "Krásně a útulně zařízené dvojlůžkové, třílůžkové i vícelůžkové pokoje s vlastním sociálním zařízením."
             ]
             h3 [] [ str "Cena:" ]
             p [] [
-                withBr "Nevratná záloha 1400 Kč za program a organizaci (v případě potřeby lze místo převést na jinou osobu stejného pohlaví)."
-                withBr "Cena za ubytování a plnou vegetariánskou penzi na dvě noci 1300 Kč, platba v hotovosti při příjezdu na Tuněchodský Mlýn."
+                withBr "Nevratná záloha 1500 Kč za program a organizaci (v případě potřeby lze místo převést na jinou osobu stejného pohlaví)."
+                withBr "Cena za ubytování, pronájem sálu, plnou vegetariánskou penzi na dvě noci 1905 Kč, platba v hotovosti při příjezdu na Bořetínský statek (plus 15,- osoba/noc vzdušné)."
                 withBr "Doprava po vlastní ose (případně se lze domluvit s ostatními ve skupině na spolujízdě)."
                 withBr ""
-                withBr "Po přihlášení na akci nutno do 14 dnů uhradit nevratnou zálohu 1400 Kč, jinak rezervace zaniká."
+                withBr "Po přihlášení na akci nutno do 14 dnů uhradit nevratnou zálohu 1500 Kč, jinak rezervace zaniká."
                 withBr ""
-                withBr "Kapacita: 10 – 15 osob"
+                withBr "Omezená kapacita: max. 16 osob"
             ]
-            p [] [
-                a [ Href Router.Contact.Path; OnClick Router.goToUrl ] [
-                    str "V případě jakýchkoliv dotazů se neváhejte na mě obrátit "
-                    i [ Class "fas fa-long-arrow-alt-right"] []
-                ]    
+            Bulma.section [
+                Bulma.columns [
+                    Bulma.column [ column.is2 ]
+                    Bulma.column [
+                        Html.h1 [ prop.text "Rezervujte si své místo na retreatu"; prop.style [ style.marginBottom (length.rem 2) ] ]
+                        emailForm state dispatch
+                    ]
+                    Bulma.column [ column.is2 ]
+                ]
             ]
         ]
-        section [ Class "display-grid"] [
-            img [ Src "https://res.cloudinary.com/mindfulyoga/image/upload/c_scale,w_2050/v1556132002/newsletters/mlyn2.jpg" ]
+        Html.section [
+            prop.className "display-grid"
+            prop.children [
+                Html.img [ prop.src "img/retreat_banner.jpg" ]
+            ]
         ]
     ]
