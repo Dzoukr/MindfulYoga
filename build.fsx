@@ -65,7 +65,7 @@ Target.create "Run" (fun _ ->
 
 Target.create "PublishClient" (fun _ ->
     let clientDeployLocalPath = (clientSrcPath </> "deploy")
-    [ clientSrcPath; clientDeployLocalPath] |> Shell.cleanDirs
+    [ clientDeployPath; clientDeployLocalPath] |> Shell.cleanDirs
     Tools.yarn "webpack-cli -p" __SOURCE_DIRECTORY__
     Shell.copyDir clientDeployPath clientDeployLocalPath FileFilter.allFiles
 )

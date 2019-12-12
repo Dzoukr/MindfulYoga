@@ -123,6 +123,8 @@ let view state dispatch =
                 withBr "Po přihlášení na akci nutno do 14 dnů uhradit nevratnou zálohu 1500 Kč, jinak rezervace zaniká."
                 withBr ""
                 withBr "Omezená kapacita: max. 16 osob"
+                withBr ""
+                withBr "Těším se na Vás!"
             ]
             Bulma.section [
                 Bulma.columns [

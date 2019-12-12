@@ -265,3 +265,4 @@ __pycache__/
 /.ionide/*
 /deploy/
 /src/MindfulYoga.Client/output/
+/src/MindfulYoga.Client/deploy/*
