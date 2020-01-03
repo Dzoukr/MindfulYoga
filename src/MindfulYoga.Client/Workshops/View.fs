@@ -25,19 +25,4 @@ let view =
             inPraw "Rezervace: <strong><a href='https://mindfulnessclub.zarezervujse.cz/cs/#/term/96314/2020-01-08;viewMode=day'>https://mindfulnessclub.zarezervujse.cz/cs/#/term/96314/2020-01-08;viewMode=day</a></strong>"
             inPraw "Více info: <a href='https://www.facebook.com/events/1326301337519795/'>https://www.facebook.com/events/1326301337519795/</a>"
         ]
-        
-        emptySection
-        textSection [
-            h1 [] [ str "Jóga pro klidnou mysl" ]
-            inP "Celodenní seminář propojující jógu a meditaci ve všímavý pohyb, učící nás vnímat své tělo, všímat si pocitů, emocí, myšlenek, které se během cvičení objevují. Tím pak prohlubovat naše zapojení jak do vnějšího, tak do vnitřního světa."
-            inP "V teoretické části se seznámíme s mindfulness a objasníme si, co je všímavá (mindful) jóga a jak všímavost integrovat do pohybu. Projdeme několik meditací a ve dvou blocích cvičení se naučíme kotvit v přítomnosti skrze prohlubování pozornosti a uvědomování si našeho těla."
-            inP "Workshop proběhne ve třech termínech:"
-            inList [ "19. ledna 2020"; "5. dubna 2020" ]
-            inP "v čase od 9:30 - 16:00."
-            inP "Dům jógy, metro Anděl, Ostrovského 11/16, Praha 5"
-            inP "Cena: 1450,- Kč, rezervační záloha: 650,- Kč"
-            inPraw "Rezervace: <strong><a href='https://dum-jogy.cz/kurzy-a-pobyty/kurzy-a-workshopy/joga-pro-klidnou-mysl.html'>https://dum-jogy.cz/kurzy-a-pobyty/kurzy-a-workshopy/joga-pro-klidnou-mysl.html</a></strong>"
-
-        ]
-       
     ]
