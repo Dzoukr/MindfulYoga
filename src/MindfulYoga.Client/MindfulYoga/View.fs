@@ -6,8 +6,6 @@ open Fable.React.Props
 open MindfulYoga.Client
 open SharedViews
 
-
-
 let view =
     div [ Class "mindfulyoga"] [
         emptySection
@@ -16,30 +14,11 @@ let view =
         ]
         textSection [
             h1 [] [ str "MINDFUL YOGA "; sup [] [str "®"]]
-            p [] [
-                str "Mindfulness (všímavost) je schopnost plně si uvědomovat, co se se mnou právě
-                    teď děje. Jaké pocity a emoce prožívám v přítomném okamžiku, jak vnímám své
-                    tělo a kde se toulá moje mysl. To vše bez hodnocení, posuzování a jakékoliv
-                    snahy cokoliv měnit."
-            ]
-            p [] [
-                str "Mindfulness se dá rozvíjet pomocí jednoduchých meditačních technik."
-            ]
-            p [] [
-                str "Mindful yoga (všímavá jóga) je druh formální meditační praxe."
-            ]
-            p [] [
-                str "Zaměření pozornosti na to, co se v daném okamžiku děje a jak na to reagujeme transformuje jógu do formy meditace."
-            ]
-            p [] [
-                str "Vychází z tradiční hatha jógy a praxe mindfulness."
-            ]
-            p [] [
-                str "Mindful yoga je praktikování jógy s důrazem na prosté uvědomování si, co se se
-                    mnou v dané chvíli děje. Přenášíme plnou pozornost do svého těla, pozorujeme
-                    pocity, emoce, myšlenky, které se během cvičení objevují, vše bez hodnocení,
-                    posuzování a potřeby skutečnost jakkoliv měnit."
-            ]
+            inP "Mindful yoga je praktikování jógy s důrazem na prosté uvědomování si, co se se mnou v přítomném okamžiku děje. Přijímáme pocity, emoce, myšlenky bez hodnocení, posuzování a potřeby je jakkoliv měnit. Přenášíme plnou pozornost do svého těla a k vnímání jeho signálů."
+            inP "Mindful yoga (všímavá jóga) je druh formální meditační praxe."
+            inP "Zaměření pozornosti na to, co se v daném okamžiku děje a jak na to reagujeme, transformuje jógu do formy meditace."
+            inP "Vychází z tradiční hatha jógy a praxe mindfulness." 
+            inP "Otevřené lekce probíhají v rodinném centru GaPa Kostelec nad Labem nebo v Domě jógy na Vinohradech." 
         ]
         emptySection
         textSection [
