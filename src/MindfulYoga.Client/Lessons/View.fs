@@ -5,6 +5,8 @@ open Fable.React
 open Fable.React.Props
 open MindfulYoga.Client
 open SharedViews
+open Feliz
+open Feliz.Bulma
 
 type Lesson = {
     Title : string
@@ -42,18 +44,37 @@ let view =
             yield p [ Class "info" ] [
                 str "Lekce probíhají na adrese Gapa pro Vás, U Pošty 822, Kostelec nad Labem. "
                 str "Cena: 140 Kč jednorázový vstup, 1100 Kč permanentka na 10 vstupů (platnost 4 měsíce), 2100 Kč permanentka 20 vstupů (platnost 8 měsíců). Permanentka je nepřenosná. "
-                str "Rezervace přes rezervační systém "
-                a [ Href "https://rezervace.mindfulyoga.cz"; Class "mindful-link"] [ str "https://rezervace.mindfulyoga.cz"]
             ]
+            yield
+                Html.p [
+                    prop.className "cta"
+                    prop.children [
+                        Bulma.buttonLink [
+                            button.isPrimary
+                            button.isMedium
+                            prop.href "https://rezervace.mindfulyoga.cz"
+                            prop.text "Přihlásit se na lekci"
+                        ]
+                    ]
+                ]
         ]
 
         emptySection
         textSection [
             yield h1 [] [ str "Otevřené lekce Dům jógy Vinohrady"]
             yield! lessonsSection lessonsDj
-            yield p [ Class "info"] [
-                str "Rezervace přes rezervační systém "
-                a [ Href "https://rezervace.dum-jogy.cz/rs/"; Class "mindful-link"] [ str "https://rezervace.dum-jogy.cz/rs/"]
-            ]
+            yield
+                Html.p [
+                    prop.className "cta"
+                    prop.children [
+                        Bulma.buttonLink [
+                            button.isPrimary
+                            button.isMedium
+                            prop.href "https://rezervace.dum-jogy.cz/rs/kalendar_vypis/instruktor/88"
+                            prop.text "Přihlásit se na lekci"
+                        ]
+                    ]
+                ]
         ]
+        
     ]  

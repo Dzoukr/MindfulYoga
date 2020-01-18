@@ -3,6 +3,8 @@ module MindfulYoga.Client.MindfulYoga.View
 open Fulma
 open Fable.React
 open Fable.React.Props
+open Feliz
+open Feliz.Bulma
 open MindfulYoga.Client
 open SharedViews
 
@@ -18,7 +20,27 @@ let view =
             inP "Mindful yoga (všímavá jóga) je druh formální meditační praxe."
             inP "Zaměření pozornosti na to, co se v daném okamžiku děje a jak na to reagujeme, transformuje jógu do formy meditace."
             inP "Vychází z tradiční hatha jógy a praxe mindfulness." 
-            inP "Otevřené lekce probíhají v rodinném centru GaPa Kostelec nad Labem nebo v Domě jógy na Vinohradech." 
+            inP "Otevřené lekce probíhají v rodinném centru GaPa Kostelec nad Labem nebo v Domě jógy na Vinohradech."
+            
+            Html.p [
+                prop.className "cta"
+                prop.children [
+                    Bulma.buttonLink [
+                        button.isPrimary
+                        button.isMedium
+                        prop.href "https://rezervace.mindfulyoga.cz"
+                        prop.text "Rezervovat lekci v Gapíku"
+                    ]
+                    
+                    Bulma.buttonLink [
+                        button.isPrimary
+                        button.isMedium
+                        prop.href "https://rezervace.dum-jogy.cz/rs/kalendar_vypis/instruktor/88"
+                        prop.text "Rezervovat lekci v Domě jógy"
+                    ]
+                ]
+            ]
+            
         ]
         emptySection
         textSection [

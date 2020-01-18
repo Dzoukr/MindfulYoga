@@ -3,9 +3,10 @@ module MindfulYoga.Client.CompanyLessons.View
 open Fulma
 open Fable.React
 open Fable.React.Props
+open Feliz
+open Feliz.Bulma
 open MindfulYoga.Client
 open SharedViews
-
 
 let view =
     div [ Class "company-lessons"] [
@@ -48,11 +49,17 @@ let view =
             p [] [
                 str "Cena dle počtu účastníků a vzdálenosti."
             ]
-            p [] [
-                a [ Href Router.Contact.Path; OnClick Router.goToUrl ] [ 
-                    str "Pro nabídku mne neváhejte kontaktovat "
-                    i [ Class "fas fa-long-arrow-alt-right" ] []
-                ]  
+            Html.p [
+                prop.className "cta"
+                prop.children [
+                    Bulma.buttonLink [
+                        button.isPrimary
+                        button.isMedium
+                        prop.href Router.Contact.Path
+                        prop.onClick (Router.goToUrl)
+                        prop.text "Poptat lekci do firmy"
+                    ]
+                ]
             ]
         ]
         emptySection

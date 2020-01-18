@@ -6,6 +6,8 @@ open Fulma
 open Fable.React
 open Fable.React.Props
 open Fable.Core.JsInterop
+open Feliz
+open Feliz.Bulma
 
 // load icons
 [<Fable.Core.ImportAll("@fortawesome/fontawesome-free/js/all.min.js")>]
@@ -35,13 +37,13 @@ let menu (state:State) dispatch =
         Navbar.menu [ Navbar.Menu.Option.Props [ Id "navMenu"; Class ("navbar-menu " + burgerMenuClass)] ] [
             Navbar.End.div [] [
                 item Router.MindfulYoga "Mindful Yoga"
-                item Router.AboutMe "O mně"
+                item Router.MindfulnessRmt "Mindfulness / RMT"
                 item Router.Retreat "Jarní retreat"
-                item Router.SriLanka2020 "Srí Lanka 2020"
                 item Router.Lessons "Lekce"
                 item Router.Workshops "Workshopy / RMT kurzy"
                 item Router.IndividualLessons "Individuální lekce"
                 item Router.CompanyLessons "Jóga pro firmy"
+                item Router.AboutMe "O mně"
                 item Router.Contact "Kontakt"
             ]            
         ]
@@ -51,20 +53,26 @@ let footerDiv (state:State) dispatch =
     let sendBtn =
         let isDisabled = state.SubscribeEmail |> MindfulYoga.Shared.Validation.isValidEmail |> not
         if state.IsSubscribed then
-            Button.a [ ] [ 
-                i [ ClassName "fas fa-check" ] [] 
-                span [ Style [ MarginLeft 5 ] ] [ str "Přihlášeno"]
+            Bulma.button [
+                button.isPrimary
+                prop.children [
+                    Html.i [ prop.className "fas fa-check" ]
+                    Html.span [
+                        prop.style [ style.marginLeft 10 ]
+                        prop.text "Přihlášeno"
+                    ]
+                ]
             ]
+
         else            
             match state.IsLoading with
-            | true -> 
-                Button.a [ ] [ 
-                    str "..."
-                ]
+            | true -> Bulma.button [ button.isPrimary; prop.text "..." ]
             | false ->
-                let props = if isDisabled then [ Button.Disabled isDisabled ] else [Button.OnClick (fun _ -> Subscribe |> dispatch)]
-                Button.a props [ 
-                    str "Odeslat"
+                Bulma.button [
+                    button.isPrimary
+                    button.isMedium
+                    if not isDisabled then prop.onClick (fun _ -> Subscribe |> dispatch)
+                    prop.text "Odebírat novinky"
                 ]
 
     let loadingClass = if state.IsLoading then "is-loading" else ""
@@ -72,7 +80,7 @@ let footerDiv (state:State) dispatch =
     footer [ Class "footer"] [
         Container.container [] [
             Columns.columns [] [
-                Column.column [ Column.Width (Screen.All, Column.IsThreeFifths); Column.Offset(Screen.All, Column.IsOneFifth )] [
+                Column.column [ Column.Width (Screen.All, Column.Is10); Column.Offset(Screen.All, Column.Is1 )] [
                     Columns.columns [ ] [
                         Column.column [ Column.Option.CustomClass "fill"] [
                             Content.content [] [
@@ -90,10 +98,11 @@ let footerDiv (state:State) dispatch =
                         ]
                         Column.column [ Column.Option.CustomClass "fill"] [
                             Content.content [] [
-                                h3 [] [ str "Přihlásit k odběru newsletteru" ]
+                                h3 [] [ str "Chci vědět, co se děje" ]
                                 Field.div [ Field.IsGrouped ] [
                                     p [ Class ("control is-expanded " + loadingClass)] [
                                         Input.email [ 
+                                            Input.Size IsMedium
                                             Input.Placeholder "Vložit email"
                                             Input.OnChange (fun e -> !!e.target?value |> EmailChanged |> dispatch)
                                         ]
@@ -115,12 +124,12 @@ let render (state : State) (dispatch : Msg -> unit) =
         match state.Page with
         | Router.AboutMe -> AboutMe.View.view
         | Router.MindfulYoga -> MindfulYoga.View.view
+        | Router.MindfulnessRmt -> MindfulnessRmt.View.view
         | Router.Retreat -> Retreat.View.view state dispatch
         | Router.Lessons -> Lessons.View.view
         | Router.IndividualLessons -> IndividualLessons.View.view
         | Router.CompanyLessons -> CompanyLessons.View.view
-        | Router.Contact -> Contact.View.view
-        | Router.SriLanka2020 -> SriLanka2020.View.view
+        | Router.Contact -> Contact.View.view state dispatch
         | Router.Workshops -> Workshops.View.view
         
     let showFooter =

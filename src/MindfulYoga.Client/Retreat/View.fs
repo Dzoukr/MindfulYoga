@@ -61,6 +61,7 @@ let emailForm model dispatch =
             Bulma.button [
                 button.isPrimary
                 button.isFullwidth
+                button.isMedium
                 prop.text "Odeslat rezervaci"
                 prop.onClick (fun _ -> SendEmailForm |> dispatch)
                 if model.IsSending then yield! [ button.isLoading; prop.disabled true ]

@@ -92,7 +92,7 @@ let view =
         textSection [
             h1 [] [ str "Vzdělání"]
             [
-
+                "2020-24", "Pražská vysoká škola psychosociálních studií, Daseinsanalytický psychoterapeutický výcvik"
                 "2019", "Meditační ústraní, Jeff Oliver (AUS)"
                 "2019", "Úvod do zaklánění, Dalibor Štedronský"
                 "2018/2019", "Roční výcvik pro lektory programu Relational Mindfulness Training (RMT), Jan Burian, Marek Vich"

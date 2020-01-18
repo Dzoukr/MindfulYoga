@@ -1,11 +1,14 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+$primary: #11acc7;
+
 @import "~bulma";
 
 @import "menu.scss";
 @import "aboutme.scss";
 @import "mindfulyoga.scss";
+@import "mindfulnessrmt.scss";
 @import "retreat.scss";
-@import "srilanka2020.scss";
 @import "lessons.scss";
 @import "individuallessons.scss";
 @import "companylessons.scss";
@@ -16,6 +19,7 @@ body {
     font-size: 1.1rem;
     font-family: 'Nunito Sans';
 }
+
 
 h1,h2,h3,h4,h5 {
     font-weight: 300 !important;
@@ -29,10 +33,10 @@ h1 {
 }
 
 a:hover {
-    color: #11acc7 !important;
+    color: #11acc7;
 }
 a {
-    color: #0f7989 !important;
+    color: #0f7989;
 }
 a.mindful-link {
     font-weight: bold;
@@ -86,4 +90,9 @@ a.mindful-link {
         display: none;
     }
     .mobile-only { display: inline; }
+}
+
+.button {
+    border-radius: 2rem;
+    text-transform: uppercase;
 }

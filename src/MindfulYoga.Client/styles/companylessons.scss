@@ -3,7 +3,12 @@
     background-repeat:no-repeat;
     background-position: center center;
     background-attachment:fixed;
-    background-size: cover !important;
+
+    .cta {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
 }
 
 #quote-begin {

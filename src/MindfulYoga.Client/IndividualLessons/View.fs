@@ -3,6 +3,8 @@ module MindfulYoga.Client.IndividualLessons.View
 open Fulma
 open Fable.React
 open Fable.React.Props
+open Feliz
+open Feliz.Bulma
 open MindfulYoga.Client
 open SharedViews
 
@@ -19,6 +21,9 @@ let view =
                 str "Lekci předchází konzultace ohledně zaměření lekce, na jejímž základě připravím koncept cvičení na míru. Při osobním setkání společně doladíme detaily a zpětně (na vyžádání) Vám zašlu plán včetně instrukcí ohledně cvičení na doma.
                 Získáte řadu doporučení pro svoji praxi, aby cvičení bylo efektivní a přispívalo k Vašemu osobnímu rozvoji."
             ]
+        ]
+        emptySection
+        textSection [
             h3 [] [ str "Mindful Yoga Therapy"]
             p [] [
                 str "Individuální lekce "
@@ -31,12 +36,6 @@ let view =
             p [] [
                 str "Cena: 1100 Kč (60-75min)"
             ]
-            p [] [
-                a [ Href Router.Contact.Path; OnClick Router.goToUrl ] [ 
-                    str "Kontaktujte mě "
-                    i [ Class "fas fa-long-arrow-alt-right" ] []
-                ]  
-            ]   
             h3 [] [ str "Mindful Yin Yoga Therapy"]
             p [] [
                 str "Individuální lekce mindful yin yogy vytvořená na míru s plným zohledněním Vašich aktuálních potřeb a současného zdravotního stavu."
@@ -48,11 +47,18 @@ let view =
             p [] [
                 str "Cena: 1100 Kč (60-75min)"
             ]
-            p [] [
-                a [ Href Router.Contact.Path; OnClick Router.goToUrl ] [ 
-                    str "Kontaktujte mě "
-                    i [ Class "fas fa-long-arrow-alt-right" ] []
-                ]  
-            ] 
+            
+            Html.p [
+                prop.className "cta"
+                prop.children [
+                    Bulma.buttonLink [
+                        button.isPrimary
+                        button.isMedium
+                        prop.href Router.Contact.Path
+                        prop.onClick (Router.goToUrl)
+                        prop.text "Mám zájem o individuální lekci"
+                    ]
+                ]
+            ]
         ]
     ]

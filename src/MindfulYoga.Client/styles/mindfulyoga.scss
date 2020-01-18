@@ -4,6 +4,15 @@
     background-position: center center;
     background-attachment: fixed;
     background-size: cover !important;
+    
+    .cta {
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        .button:first-child {
+            margin-right: 5rem;
+        }
+    }
 }
 
 .fa-ul {
@@ -17,3 +26,4 @@
     }
     margin-bottom: 1.5rem;
 }
+
