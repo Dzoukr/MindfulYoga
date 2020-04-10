@@ -7,6 +7,7 @@ open MindfulYoga.Client
 open SharedViews
 open Feliz
 open Feliz.Bulma
+open MindfulYoga.Client.Domain
 
 type Lesson = {
     Title : string
@@ -34,8 +35,88 @@ let lessonsSection lsns =
     )
     |> List.collect id
 
-let view =
+let emailForm (model:State) dispatch =
+    Html.div [
+        Bulma.field [
+            Bulma.label "Vaše jméno a příjmení *"
+            Bulma.control [
+                Bulma.textInput [
+                    ValidationViews.color model.EmailFormValidationErrors (nameof(model.EmailForm.Name))
+                    prop.onTextChange (fun x -> { model.EmailForm with Name = x } |> EmailFormChanged |> dispatch )
+                ]
+                ValidationViews.help model.EmailFormValidationErrors (nameof(model.EmailForm.Name))
+            ]
+        ]
+        Bulma.field [
+            Bulma.label "Váš email *"
+            Bulma.control [
+                Bulma.textInput [
+                    ValidationViews.color model.EmailFormValidationErrors (nameof(model.EmailForm.Email))
+                    prop.onTextChange (fun x -> { model.EmailForm with Email = x } |> EmailFormChanged |> dispatch )
+                ]
+                ValidationViews.help model.EmailFormValidationErrors (nameof(model.EmailForm.Email))
+            ]
+        ]
+        Bulma.field [
+            Bulma.label "Zpráva"
+            Bulma.control [
+                Bulma.textarea [
+                    prop.onTextChange (fun x -> { model.EmailForm with Message = x } |> EmailFormChanged |> dispatch )
+                ]
+            ]
+        ]
+        Bulma.field [
+            Bulma.button [
+                button.isPrimary
+                button.isFullwidth
+                button.isMedium
+                prop.text "Přihlásit na lekci"
+                prop.onClick (fun _ -> SendEmailForm |> dispatch)
+                if model.IsSending then yield! [ button.isLoading; prop.disabled true ]
+            ]
+        ]
+    ]
+
+let view state dispatch =
     div [ Class "lessons"] [
+        
+        emptySection
+        textSection [
+            h1 [] [ str "Livestream lekce"]
+            Html.h2 "Středy 19:30 – 20:40"
+            Html.p "Lekce je koncipována jako jemné plynutí na vlně dechu, během kterého vlídně rozproudíme energii v celém těle. Směřujeme pozornost k tomu, co prožíváme v přítomném okamžiku a vytváříme podmínky pro uvolnění napětí a stresu z našeho těla.
+Lehce dynamická mindful jóga se zaměřením na protažení, posílení celého těla a rozvíjení naší všímavosti.
+Vhodné pro začátečníky i pro pokročilejší jogíny."
+            
+            Html.div [
+                prop.className "video-container"
+                prop.dangerouslySetInnerHTML "<iframe class=\"video\" src=\"https://www.youtube.com/embed/VWfePEtnwDA\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+            ]
+            
+            Html.p [
+                prop.className "info"
+                prop.dangerouslySetInnerHTML "Přihlášení: jana@mindfulyoga.cz nebo formulář níže.<br/>Lekce proběhne přes aplikaci ZOOM. Po přihlášení obdržíte všechny potřebné informace k připojení se na lekci."
+            ]
+            Html.p [
+                prop.className "info"
+                prop.dangerouslySetInnerHTML "NOVĚ MOŽNOST PRAKTIKOVAT I V JINÝ ČAS ☘️<br/>Pokud lekci nestihnete nebo byste rádi praktikovali později či v jiný den, pošlete mi prosím zprávu s prosbou o zaslání linku na proběhlou lekci do vaší emailové schránky."
+            ]
+            Html.p [
+                prop.className "info"
+                prop.dangerouslySetInnerHTML "Lekce probíhají za dobrovolný příspěvek.<br/>Doporučená výše příspěvku je 110 Kč za 70 min lekci, můžete zaslat méně i více, podle svého uvážení (číslo účtu 1681695016/3030) 🙏<br/>Jogínky, které mají zakoupenou permanentku, mohou na úhradu použít kredity."
+            ]
+            Bulma.section [
+                Bulma.columns [
+                    Bulma.column [ column.is2 ]
+                    Bulma.column [
+                        Html.h1 [ prop.text "Rezervujte si své místo na lekci"; prop.style [ style.marginBottom (length.rem 2) ] ]
+                        emailForm state dispatch
+                    ]
+                    Bulma.column [ column.is2 ]
+                ]
+            ]
+            
+        ]
         
         emptySection
         textSection [

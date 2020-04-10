@@ -39,7 +39,7 @@ let menu (state:State) dispatch =
                 item Router.MindfulYoga "Mindful Yoga"
                 item Router.MindfulnessRmt "Mindfulness / RMT"
                 item Router.Retreat "Jarní retreat"
-                item Router.Lessons "Lekce"
+                item Router.Lessons "Online Lekce"
                 item Router.Workshops "Workshopy / RMT kurzy"
                 item Router.IndividualLessons "Individuální lekce"
                 item Router.CompanyLessons "Jóga pro firmy"
@@ -126,7 +126,7 @@ let render (state : State) (dispatch : Msg -> unit) =
         | Router.MindfulYoga -> MindfulYoga.View.view
         | Router.MindfulnessRmt -> MindfulnessRmt.View.view
         | Router.Retreat -> Retreat.View.view state dispatch
-        | Router.Lessons -> Lessons.View.view
+        | Router.Lessons -> Lessons.View.view state dispatch
         | Router.IndividualLessons -> IndividualLessons.View.view
         | Router.CompanyLessons -> CompanyLessons.View.view
         | Router.Contact -> Contact.View.view state dispatch

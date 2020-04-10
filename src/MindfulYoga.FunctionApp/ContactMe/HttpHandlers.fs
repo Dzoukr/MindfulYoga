@@ -2,6 +2,7 @@
 
 open Microsoft.Extensions.Logging
 open FSharp.Control.Tasks
+open System.Threading.Tasks
 open Fable.Remoting.Server
 open Fable.Remoting.Giraffe
 open MindfulYoga.Libraries.Emails.MailjetProvider
@@ -33,15 +34,19 @@ let sendEmail (log:ILogger) mailTo (configuration:MailjetEmailConfiguration) (em
         log.LogInformation "Email successfully sent"
         return Ok ()
     }
-    
 
-let contactMeService (log:ILogger) mailTo config : ContactMeService = 
+let contactMeService (log:ILogger) mailTo config (subscribe:string -> Task<unit>) : ContactMeService = 
     {
-        SendEmail = sendEmail log mailTo config >> Async.AwaitTask
+        SendEmail = (fun form ->
+            task {
+                do! form.Email |> subscribe
+                return! form |> sendEmail log mailTo config 
+            }    
+        ) >> Async.AwaitTask
     }
 
-let contactMeServiceHandler log mailTo config =
+let contactMeServiceHandler log mailTo config subscribe =
     Remoting.createApi()
     |> Remoting.withRouteBuilder ContactMeService.RouteBuilder
-    |> Remoting.fromValue (contactMeService log mailTo config)
+    |> Remoting.fromValue (contactMeService log mailTo config subscribe)
     |> Remoting.buildHttpHandler
