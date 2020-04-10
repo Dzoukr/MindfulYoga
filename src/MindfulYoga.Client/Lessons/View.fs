@@ -83,7 +83,7 @@ let view state dispatch =
         emptySection
         textSection [
             h1 [] [ str "Livestream lekce"]
-            Html.h2 "Středy 19:30 – 20:40"
+            Html.h2 "Středy 19:30 – 20:40 / LIVEstream: Mindful Easy Flow"
             Html.p "Lekce je koncipována jako jemné plynutí na vlně dechu, během kterého vlídně rozproudíme energii v celém těle. Směřujeme pozornost k tomu, co prožíváme v přítomném okamžiku a vytváříme podmínky pro uvolnění napětí a stresu z našeho těla.
 Lehce dynamická mindful jóga se zaměřením na protažení, posílení celého těla a rozvíjení naší všímavosti.
 Vhodné pro začátečníky i pro pokročilejší jogíny."
