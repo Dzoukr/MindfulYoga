@@ -75,7 +75,7 @@ let view state dispatch =
         
         textSection [
             h1 [] [ str "MINDFUL DETOX YOGA RETREAT BOŘETÍNSKÝ STATEK "]
-            h3 [] [ str "Víkend 17. - 19. 4. 2020" ]
+            h3 [] [ str "Víkend 13. - 15. listopad 2020" ]
             Html.p "Srdečně Vás zvu ke společnému víkendu na Bořetínském statku. Statek se nachází v malé vesničce, blízko Jindřichova Hradce, na bývalé poutní cestě ke kapli sv. Anny."
             Html.p "Bořetínský statek byl postaven v 18. století a nedávno byl citlivě zrekonstruován pod taktovkou paní architektky Moniky Krby. Celé stavení je propojené s prostorným dvorem a vesnickou zahradou."
             Html.p [

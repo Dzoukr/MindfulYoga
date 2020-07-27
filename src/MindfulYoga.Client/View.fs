@@ -38,8 +38,8 @@ let menu (state:State) dispatch =
             Navbar.End.div [] [
                 item Router.MindfulYoga "Mindful Yoga"
                 item Router.MindfulnessRmt "Mindfulness / RMT"
-                item Router.Retreat "Jarní retreat"
-                item Router.Lessons "Online Lekce"
+                item Router.Retreat "Podzimní retreat"
+                item Router.Lessons "Lekce"
                 item Router.Workshops "Workshopy / RMT kurzy"
                 item Router.IndividualLessons "Individuální lekce"
                 item Router.CompanyLessons "Jóga pro firmy"
@@ -93,6 +93,9 @@ let footerDiv (state:State) dispatch =
                                 ]
                                 a [ Href "mailto:jana@mindfulyoga.cz" ] [
                                     i [ Class "far fa-envelope fa-2x"; Data ("fa-transform","shrink-5"); Data("fa-mask","fas fa-circle") ] []                                    
+                                ]
+                                a [ Href "https://www.youtube.com/channel/UCqpdbmUsTNYkaEIFFnRHiMg" ] [
+                                    i [ Class "fab fa-youtube fa-2x"; Data ("fa-transform","shrink-5"); Data("fa-mask","fas fa-circle") ] []                                    
                                 ]
                             ]
                         ]

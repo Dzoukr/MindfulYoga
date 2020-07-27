@@ -28,6 +28,7 @@ let view =
                     Bulma.buttonLink [
                         button.isPrimary
                         button.isMedium
+                        prop.target "_blank"
                         prop.href "https://rezervace.mindfulyoga.cz"
                         prop.text "Rezervovat lekci v Gapíku"
                     ]

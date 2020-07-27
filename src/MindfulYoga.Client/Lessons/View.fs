@@ -133,6 +133,7 @@ Vhodné pro začátečníky i pro pokročilejší jogíny."
                         Bulma.buttonLink [
                             button.isPrimary
                             button.isMedium
+                            prop.target "_blank"
                             prop.href "https://rezervace.mindfulyoga.cz"
                             prop.text "Přihlásit se na lekci"
                         ]
