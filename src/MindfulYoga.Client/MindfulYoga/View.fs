@@ -16,12 +16,13 @@ let view =
         ]
         textSection [
             h1 [] [ str "MINDFUL YOGA "; sup [] [str "®"]]
-            inP "Mindful yoga je praktikování jógy s důrazem na prosté uvědomování si, co se se mnou v přítomném okamžiku děje. Přijímáme pocity, emoce, myšlenky bez hodnocení, posuzování a potřeby je jakkoliv měnit. Přenášíme plnou pozornost do svého těla a k vnímání jeho signálů."
             inP "Mindful yoga (všímavá jóga) je druh formální meditační praxe."
-            inP "Zaměření pozornosti na to, co se v daném okamžiku děje a jak na to reagujeme, transformuje jógu do formy meditace."
-            inP "Vychází z tradiční hatha jógy a praxe mindfulness." 
+            inP "Mindful yoga je praktikování jógy s důrazem na prosté uvědomování si toho, co se se mnou v přítomném okamžiku děje."
+            inP "Přijímáme pocity, emoce, myšlenky, bez potřeby skutečnost jakkoliv měnit. Nasloucháme signálům těla a pozorně vnímáme každý pohyb. Vytvořený prostor umožňuje snáze uslyšet signály těla a pomáhá nám objevit, co opravdu potřebujeme, ať už na podložce nebo mimo ní."
+            inP "Zaměření pozornosti na to, co se v daném okamžiku děje a jak na probíhající procesy reagujeme, transformuje jógu do formy meditace."
+            inP "Vychází z praxe tradiční hatha jógy a meditace mindfulness."
             inP "Otevřené lekce probíhají v rodinném centru GaPa Kostelec nad Labem nebo v Domě jógy na Vinohradech."
-            
+
             Html.p [
                 prop.className "cta"
                 prop.children [
