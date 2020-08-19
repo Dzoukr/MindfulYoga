@@ -16,9 +16,9 @@ type Lesson = {
 }
 
 let lessonsGapa = [
-    { Title = "Pondělí, 18:15 – 19:25"; Name = "Jemná mindful yoga"; Description = "Rozvíjíme všímavost během klidně plynoucí lekce jógy. S ochotou vcítit se do svého těla, směřujeme pozornost k tomu, co prožíváme v přítomném okamžiku. Jemně se protahujeme, vědomě dýcháme a čerpáme novou energii.<br/>Jóga vhodná pro začátečníky, ale i pro pokročilé, kteří dávají přednost jemnější praxi. Vhodné i pro seniory a pro všechny se sníženou pohyblivostí, těhotné a po porodu."}
-    { Title = "Pondělí, 19:40 – 20:50"; Name = "Mindful flow yoga"; Description = "Probouzíme v sobě radost a hravost během pozdravů slunci. Občas čelíme nějaké výzvě. Posilujeme střed těla, svaly kolem páteře, uvolňujeme kyčle. Vše s plným respektem k našemu tělu a rozvíjející se všímavostí k momentu TADY A TEĎ. Lekce zakončena relaxací.<br/>Dynamická lekce vhodná pro pokročilejší jogíny."}
-    { Title = "Čtvrtek, 19:00 – 20:10"; Name = "Mindful easy flow"; Description = "Jemné plynutí na vlně dechu, během kterého postupně rozproudíme energii v celém těle. Zůstáváme v kontaktu s tím, co se v nás děje a pomáháme tělu přebytečné napětí a stres uvolnit. Lehce dynamická jóga se zaměřením na protažení a posílení celého těla.<br/>Vhodné pro začátečníky i pro pokročilejší jogíny."}
+    { Title = "Pondělí, 18:15 – 19:25"; Name = "Mindful yoga pro zdravá záda"; Description = "Rozvíjení všímavosti během klidně plynoucí lekce jógy. S ochotou vcítit se do svého těla, směřujeme pozornost k tomu, co prožíváme v přítomném okamžiku. Vědomě dýcháme.</br></br>Lekce s důrazem na zmírnění a prevenci bolestí zad. Protažení zkrácených svalů trupu a posílení ochablých svalů, které neposkytují dobrou oporu. Podpora správného držení těla a aktivace hlubokého stabilizačního systému páteře.</br></br>Jóga vhodná pro začátečníky, ale i pro pokročilé, kteří dávají přednost jemnější praxi. Vhodné i pro seniory a pro všechny se sníženou pohyblivostí, těhotné a po porodu."}
+    { Title = "Pondělí, 19:40 – 20:50"; Name = "Mindful flow yoga"; Description = "Probouzíme v sobě radost a hravost během pozdravů slunci. Občas čelíme nějaké výzvě. Posilujeme střed těla, svaly kolem páteře, uvolňujeme kyčle.</br></br>Skrze vědomý dech udždžají zklidňujeme nervový systém, tišíme mysl a detoxikujeme tělo. Vše s plným respektem k našemu tělu a rozvíjející se všímavostí k momentu TADY A TEĎ. Lekce zakončena relaxací.</br></br>Dynamická lekce vhodná pro pokročilejší jogíny."}
+    { Title = "Čtvrtek, 19:00 – 20:10"; Name = "Mindful easy flow"; Description = "Jemné plynutí na vlně dechu, během kterého vlídně rozproudíme energii v celém těle. Zůstáváme v kontaktu s tím, co se v nás děje a vytváříme podmínky pro uvolnění přebytečného napětí a stresu.</br></br>Lehce dynamická jóga se zaměřením na protažení a posílení celého těla, které zlepšuje zdraví orgánů a oběhového i dýchacího systému.</br></br>Vhodné pro začátečníky i pro pokročilejší jogíny."}
 ]
 
 let lessonsDj = [
@@ -82,6 +82,29 @@ let view state dispatch =
         
         emptySection
         textSection [
+            yield h1 [] [ str "Otevřené lekce v GaPa Kostelec"]
+            yield! lessonsSection lessonsGapa
+            yield p [ Class "info" ] [
+                str "Lekce probíhají na adrese Gapa pro Vás, U Pošty 822, Kostelec nad Labem. "
+                str "Cena: 150 Kč jednorázový vstup, 1200 Kč permanentka na 10 vstupů (platnost 4 měsíce), 2200 Kč permanentka 20 vstupů (platnost 8 měsíců). Permanentka je nepřenosná. "
+            ]
+            yield
+                Html.p [
+                    prop.className "cta"
+                    prop.children [
+                        Bulma.buttonLink [
+                            button.isPrimary
+                            button.isMedium
+                            prop.target "_blank"
+                            prop.href "https://rezervace.mindfulyoga.cz"
+                            prop.text "Přihlásit se na lekci"
+                        ]
+                    ]
+                ]
+        ]
+        
+        emptySection
+        textSection [
             h1 [] [ str "Livestream lekce"]
             Html.h2 "Středy 19:30 – 20:40 / LIVEstream: Mindful Easy Flow"
             Html.p "Lekce je koncipována jako jemné plynutí na vlně dechu, během kterého vlídně rozproudíme energii v celém těle. Směřujeme pozornost k tomu, co prožíváme v přítomném okamžiku a vytváříme podmínky pro uvolnění napětí a stresu z našeho těla.
@@ -118,28 +141,6 @@ Vhodné pro začátečníky i pro pokročilejší jogíny."
             
         ]
         
-        emptySection
-        textSection [
-            yield h1 [] [ str "Otevřené lekce v GaPa Kostelec"]
-            yield! lessonsSection lessonsGapa
-            yield p [ Class "info" ] [
-                str "Lekce probíhají na adrese Gapa pro Vás, U Pošty 822, Kostelec nad Labem. "
-                str "Cena: 140 Kč jednorázový vstup, 1100 Kč permanentka na 10 vstupů (platnost 4 měsíce), 2100 Kč permanentka 20 vstupů (platnost 8 měsíců). Permanentka je nepřenosná. "
-            ]
-            yield
-                Html.p [
-                    prop.className "cta"
-                    prop.children [
-                        Bulma.buttonLink [
-                            button.isPrimary
-                            button.isMedium
-                            prop.target "_blank"
-                            prop.href "https://rezervace.mindfulyoga.cz"
-                            prop.text "Přihlásit se na lekci"
-                        ]
-                    ]
-                ]
-        ]
 
         emptySection
         textSection [

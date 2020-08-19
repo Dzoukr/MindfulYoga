@@ -33,9 +33,7 @@ let view =
                 br []
                 str "Jógová praxe, během které obracíme pozornost ke svému vnitřnímu prostředí. Dále cílí na posílení a protažení svalů, což zlepšuje zdraví orgánů, kostí, oběhového i dýchacího systému."
             ]
-            p [] [
-                str "Cena: 1100 Kč (60-75min)"
-            ]
+            
             h3 [] [ str "Mindful Yin Yoga Therapy"]
             p [] [
                 str "Individuální lekce mindful yin yogy vytvořená na míru s plným zohledněním Vašich aktuálních potřeb a současného zdravotního stavu."
@@ -44,10 +42,7 @@ let view =
                 str "Mindful yin yoga přináší propojení yin yogy, která vychází z tradiční čínské medicíny a mindfulness. Během cvičení podporujeme růst bdělé pozornosti k vnímání svého těla.
                     Praxe, která je především statická, zahrnuje uvolnění svalových skupin a zvyšování elasticity/pružnosti vazů, kloubů a celého těla. Během tří až pětiminutových výdrží v ásanách působíme na hluboké pojivové tkáně tj. fascie, vhodně je zatížíme a tím v nich stimulujeme cirkulaci energie čchi."
             ]
-            p [] [
-                str "Cena: 1100 Kč (60-75min)"
-            ]
-            
+                        
             Html.p [
                 prop.className "cta"
                 prop.children [
