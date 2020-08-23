@@ -86,7 +86,7 @@ let view state dispatch =
             yield! lessonsSection lessonsGapa
             yield p [ Class "info" ] [
                 str "Lekce probíhají na adrese Gapa pro Vás, U Pošty 822, Kostelec nad Labem. "
-                str "Cena: 150 Kč jednorázový vstup, 1200 Kč permanentka na 10 vstupů (platnost 4 měsíce), 2200 Kč permanentka 20 vstupů (platnost 8 měsíců). Permanentka je nepřenosná. "
+                str "Cena: 50 Kč první vstup, 150 Kč jednorázový vstup, 1200 Kč permanentka na 10 vstupů (platnost 4 měsíce), 2200 Kč permanentka 20 vstupů (platnost 8 měsíců). Permanentka je nepřenosná. "
             ]
             yield
                 Html.p [
