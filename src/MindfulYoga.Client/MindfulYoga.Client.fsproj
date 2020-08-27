@@ -10,6 +10,7 @@
         <Compile Include="Router.fs" />
         <Compile Include="Domain.fs" />
         <Compile Include="SharedViews.fs" />
+        <Compile Include="EmailMe.fs" />
         <Compile Include="State.fs" />
         <Compile Include="AboutMe\View.fs" />
         <Compile Include="MindfulYoga\View.fs" />

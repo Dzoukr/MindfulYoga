@@ -133,7 +133,7 @@ let render (state : State) (dispatch : Msg -> unit) =
         | Router.IndividualLessons -> IndividualLessons.View.view
         | Router.CompanyLessons -> CompanyLessons.View.view
         | Router.Contact -> Contact.View.view state dispatch
-        | Router.Workshops -> Workshops.View.view
+        | Router.Workshops -> Workshops.View.view state dispatch
         
     let showFooter =
         match state.Page with
