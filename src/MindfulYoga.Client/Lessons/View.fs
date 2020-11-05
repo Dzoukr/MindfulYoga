@@ -82,29 +82,6 @@ let view state dispatch =
         
         emptySection
         textSection [
-            yield h1 [] [ str "Otevřené lekce v GaPa Kostelec"]
-            yield! lessonsSection lessonsGapa
-            yield p [ Class "info" ] [
-                str "Lekce probíhají na adrese Gapa pro Vás, U Pošty 822, Kostelec nad Labem. "
-                str "Cena: 50 Kč první vstup, 150 Kč jednorázový vstup, 1200 Kč permanentka na 10 vstupů (platnost 4 měsíce), 2200 Kč permanentka 20 vstupů (platnost 8 měsíců). Permanentka je nepřenosná. "
-            ]
-            yield
-                Html.p [
-                    prop.className "cta"
-                    prop.children [
-                        Bulma.buttonLink [
-                            button.isPrimary
-                            button.isMedium
-                            prop.target "_blank"
-                            prop.href "https://rezervace.mindfulyoga.cz"
-                            prop.text "Přihlásit se na lekci"
-                        ]
-                    ]
-                ]
-        ]
-        
-        emptySection
-        textSection [
             h1 [] [ str "Livestream lekce"]
             Html.h2 "Středy 19:30 – 20:40 / LIVEstream: Mindful Easy Flow"
             Html.p "Lekce je koncipována jako jemné plynutí na vlně dechu, během kterého vlídně rozproudíme energii v celém těle. Směřujeme pozornost k tomu, co prožíváme v přítomném okamžiku a vytváříme podmínky pro uvolnění napětí a stresu z našeho těla.
@@ -126,7 +103,7 @@ Vhodné pro začátečníky i pro pokročilejší jogíny."
             ]
             Html.p [
                 prop.className "info"
-                prop.dangerouslySetInnerHTML "Lekce probíhají za dobrovolný příspěvek.<br/>Doporučená výše příspěvku je 110 Kč za 70 min lekci, můžete zaslat méně i více, podle svého uvážení (číslo účtu 1681695016/3030) 🙏<br/>Jogínky, které mají zakoupenou permanentku, mohou na úhradu použít kredity."
+                prop.dangerouslySetInnerHTML "Lekce probíhají za dobrovolný příspěvek.<br/>Doporučená výše příspěvku je 120 Kč za 70 min lekci, můžete zaslat méně i více, podle svého uvážení (číslo účtu 1681695016/3030) 🙏<br/>Jogínky, které mají zakoupenou permanentku, mohou na úhradu použít kredity."
             ]
             Bulma.section [
                 Bulma.columns [
@@ -141,6 +118,28 @@ Vhodné pro začátečníky i pro pokročilejší jogíny."
             
         ]
         
+        emptySection
+        textSection [
+            yield h1 [] [ str "Otevřené lekce v GaPa Kostelec"]
+            yield! lessonsSection lessonsGapa
+            yield p [ Class "info" ] [
+                str "Lekce probíhají na adrese Gapa pro Vás, U Pošty 822, Kostelec nad Labem. "
+                str "Cena: 50 Kč první vstup, 150 Kč jednorázový vstup, 1200 Kč permanentka na 10 vstupů (platnost 4 měsíce), 2200 Kč permanentka 20 vstupů (platnost 8 měsíců). Permanentka je nepřenosná. "
+            ]
+            yield
+                Html.p [
+                    prop.className "cta"
+                    prop.children [
+                        Bulma.buttonLink [
+                            button.isPrimary
+                            button.isMedium
+                            prop.target "_blank"
+                            prop.href "https://rezervace.mindfulyoga.cz"
+                            prop.text "Přihlásit se na lekci"
+                        ]
+                    ]
+                ]
+        ]
 
         emptySection
         textSection [
