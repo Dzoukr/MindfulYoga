@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: dotnet fake build -t PublishFunctionApp
 
-      - name: Publish Client
+      - name: Publish Server
         uses: actions/upload-artifact@v2
         with:
           name: server
@@ -48,3 +48,4 @@ jobs:
           # Name of the Azure Function App
           app-name: mindfulyoga
           package: server
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
