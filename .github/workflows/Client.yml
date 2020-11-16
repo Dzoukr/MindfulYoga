@@ -40,6 +40,15 @@ jobs:
         with:
           name: client
           path: client
+      - name: Setup config
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: client/configuration.js
+          contents: |
+            const config = {
+                baseUrl: "https://mindfulyoga.azurewebsites.net/"
+            }
+          write-mode: overwrite
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
