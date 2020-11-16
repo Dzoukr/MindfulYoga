@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/MindfulYoga.Client/*
-      - .github/workflows/Client.yml
+      - 'src/MindfulYoga.Client/**'
+      - '.github/workflows/Client.yml'
 jobs:
   build:
     runs-on: ubuntu-latest
