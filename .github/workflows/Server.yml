@@ -1,0 +1,50 @@
+name: Server
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+    paths:
+      - 'src/MindfulYoga.FunctionApp/*'
+      - 'src/MindfulYoga.Shared/*'
+      - 'src/MindfulYoga.Libraries/*'
+      - '.github/workflows/Server.yml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: 3.1.300
+
+      - name: Install Tools
+        run: dotnet tool restore
+
+      - name: Build
+        run: dotnet fake build -t PublishFunctionApp
+
+      - name: Publish Client
+        uses: actions/upload-artifact@v2
+        with:
+          name: server
+          path: publish/functionApp
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download app artifact
+        uses: actions/download-artifact@v2.0.5
+        with:
+          name: server
+          path: server
+      - name: Deploy to FunctionApp
+        uses: Azure/functions-action@v1.1.7
+        with:
+          # Name of the Azure Function App
+          app-name: mindfulyoga
+          package: server
