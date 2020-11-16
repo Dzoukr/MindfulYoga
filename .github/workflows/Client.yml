@@ -1,10 +1,11 @@
-name: CI
+name: Client
 
 on:
   workflow_dispatch:
   push:
     branches: [ master ]
-
+    paths:
+      - src/MindfulYoga.Client/*
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,7 +22,7 @@ jobs:
         run: dotnet tool restore
 
       - name: Build
-        run: dotnet fake build -t Publish
+        run: dotnet fake build -t PublishClient
 
       - name: Publish Client
         uses: actions/upload-artifact@v2
@@ -29,12 +30,7 @@ jobs:
           name: client
           path: publish/client
 
-      - name: Publish Server
-        uses: actions/upload-artifact@v2
-        with:
-          name: server
-          path: publish/functionApp
-  deploy-client:
+  deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -43,10 +39,11 @@ jobs:
         with:
           name: client
           path: client
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_CONFIG_NAME: Roman Provazník
           BRANCH: gh-pages
           FOLDER: client
           CLEAN: true
