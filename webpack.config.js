@@ -20,7 +20,7 @@ var CONFIG = {
     indexHtmlTemplate: clientPath +'/public/index.html',
     fsharpEntry: clientPath + '/MindfulYoga.Client.fsproj',
     cssEntry: clientPath + '/styles/app.scss',
-    outputDir: clientPath + '/deploy',
+    outputDir: './publish/client',
     assetsDir: clientPath + '/public',
     devServerPort: 8080,
     // When using webpack-dev-server, you may need to redirect some calls

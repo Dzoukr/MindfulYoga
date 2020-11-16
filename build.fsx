@@ -37,9 +37,9 @@ module Tools =
 
 let serverSrcPath = Path.getFullName "./src/MindfulYoga.FunctionApp"
 let serverWatcherPath = Path.getFullName "./src/MindfulYoga.FunctionApp.Local"
-let serverDeployPath = Path.getFullName "./deploy/functionApp"
+let serverDeployPath = Path.getFullName "./publish/functionApp"
 let clientSrcPath = Path.getFullName "./src/MindfulYoga.Client"
-let clientDeployPath = Path.getFullName "./deploy/client"
+let clientDeployPath = Path.getFullName "./publish/client"
 
 Target.create "InstallClient" (fun _ ->
     printfn "Node version:"
@@ -56,15 +56,15 @@ Target.create "Run" (fun _ ->
     let client = async {
         Tools.yarn "webpack-dev-server" clientSrcPath
     }
-    [client;server]
-//    [client]
+//    [client;server]
+    [client]
     |> Async.Parallel
     |> Async.RunSynchronously
     |> ignore
 )
 
 Target.create "PublishClient" (fun _ ->
-    let clientDeployLocalPath = (clientSrcPath </> "deploy")
+    let clientDeployLocalPath = (clientSrcPath </> "publish")
     [ clientDeployPath; clientDeployLocalPath] |> Shell.cleanDirs
     Tools.yarn "webpack-cli -p" __SOURCE_DIRECTORY__
     Shell.copyDir clientDeployPath clientDeployLocalPath FileFilter.allFiles

@@ -264,5 +264,5 @@ __pycache__/
 *.pyc
 /.ionide/*
 /deploy/
+/publish/
 /src/MindfulYoga.Client/output/
-/src/MindfulYoga.Client/deploy/*
