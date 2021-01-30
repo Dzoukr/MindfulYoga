@@ -16,13 +16,27 @@ let view =
         ]
         textSection [
             h1 [] [ str "MINDFUL YOGA "; sup [] [str "®"]]
-            inP "Mindful yoga (všímavá jóga) je druh formální meditační praxe."
-            inP "Mindful yoga je praktikování jógy s důrazem na prosté uvědomování si toho, co se se mnou v přítomném okamžiku děje."
-            inP "Přijímáme pocity, emoce, myšlenky, bez potřeby skutečnost jakkoliv měnit. Nasloucháme signálům těla a pozorně vnímáme každý pohyb. Vytvořený prostor umožňuje snáze uslyšet signály těla a pomáhá nám objevit, co opravdu potřebujeme, ať už na podložce nebo mimo ní."
+            
+            inP "Mindful yoga (všímavá jóga) je praxe jógy s důrazem na prosté uvědomování si toho, co se se mnou v přítomném okamžiku děje." 
+            inP "Přijímáme pocity, emoce, myšlenky takové, jaké jsou, bez potřeby skutečnost jakkoliv měnit." 
+            inP "Pozorně vnímáme každý pohyb, všímáme si pocitů, emocí, myšlenek, dechu... všeho co je dominantní. Vytváříme prostor, který nám umožňuje snáze uslyšet signály těla a objevit, co opravdu potřebujeme, ať už na podložce nebo mimo ní." 
             inP "Zaměření pozornosti na to, co se v daném okamžiku děje a jak na probíhající procesy reagujeme, transformuje jógu do formy meditace."
             inP "Vychází z praxe tradiční hatha jógy a meditace mindfulness."
-            inP "Otevřené lekce probíhají v rodinném centru GaPa Kostelec nad Labem nebo v Domě jógy na Vinohradech."
+            
+            h2 [] [ str "Co získám praxí mindful yogy?"]
+            [       
+                "Sníží se mi pociťovaný stres"
+                "Moje tělo se uvolní"
+                "Vřelejší vztah k sobě – učím se přijímat a podporovat" 
+                "Zvýší se mi sebedůvěra"
+                "Učím se mít ráda a přijímat se" 
+                "Propojení se svým tělem"
+                "Poznávám, kdo ve skutečnosti jsem a co chci"
+            ] |> inList |> List.singleton |> div []
+            
+            inP "Přidej se do skupiny podobně smýšlejících jogínek."
 
+          
             Html.p [
                 prop.className "cta"
                 prop.children [
@@ -30,62 +44,32 @@ let view =
                         button.isPrimary
                         button.isMedium
                         prop.target "_blank"
-                        prop.href "https://rezervace.mindfulyoga.cz"
-                        prop.text "Rezervovat lekci v Gapíku"
-                    ]
-                    
-                    Bulma.buttonLink [
-                        button.isPrimary
-                        button.isMedium
-                        prop.href "https://rezervace.dum-jogy.cz/rs/kalendar_vypis/instruktor/88"
-                        prop.text "Rezervovat lekci v Domě jógy"
+                        prop.href "https://www.facebook.com/groups/mindfulyoga.cz"
+                        prop.text "Přidat se ke skupině"
                     ]
                 ]
             ]
             
         ]
+        
         emptySection
-        textSection [
-            h2 [] [ str "Benefity mindful yogy"]
-            [       
-                "Zmírňuje celkový stres"
-                "Uvolňuje napětí v těle"
-                "Učí nás se přijímat a podporovat"
-                "Posiluje sebedůvěru"
-                "Učí nás být k sobě laskavý, roste laskavost i k ostatním"
-                "Otevírá fyzický i duševní prostor nezbytný pro expanzi a rozvoj"
-                "Podporuje růst osobní svobody"
-                "Je významným nástrojem sebepoznání"
-                "A samozřejmě přináší všechny fyzické výhody plynoucí z protahování a posilování"
-            ] |> inList |> List.singleton |> div []
+        textSectionCentered [
+            h4 [] [ str "\" Vše se odehrává v přítomném okamžiku, jen v něm lze věci měnit. \"" ]
         ]
+        
         emptySection
         textSection [
-            h2 [] [ str "Čím se taková praxe liší od ostatních?"]
+            h2 [] [ str "Jak to všechno funguje?"]
             [       
-                "Studenti jsou neustále nabádáni k obracení pozornosti k tomu, co prožívají v přítomném okamžiku."
-                "Pozorností v těle zjišťujeme, kde se v těle stres projevuje, samotné uvědomování pomáhá napětí odstranit."
-                "Všímáme si pocitů, emocí, myšlenek, smyslových vjemů, aniž bychom na ně reagovali, pouze z pozice pozorovatele."
-                "Zařazování jednoduchých meditačních technik během lekce, dechových technik na snížení stresu."
-                "Znovu se napojíme na naše tělo a vytvoříme si prostor pro vnímání jeho signálů. Často jsme od svého těla odpojeni a žijeme jen „v hlavě“. Učíme
-                                    se naslouchat našemu tělu, kde tělo říká, že se můžeme do pozice ponořit hlouběji a kde naopak máme zastavit. Při udržení této pozornosti
-                                    se nedostáváme do bodu, ve kterém ucítíme bolest – každý vědomě přebírá zodpovědnost za čtení signálů vlastního těla."
-
-                "Vnímáme, kde nás omezuje naše mysl. Kde se v ásaně nedostaneme dál
-                                        ne kvůli tělu, ale kde nám brání náš „vnitřní kritik“, který našeptává, že to
-                                        nedokážeme. Nebo naopak, kde se tlačíme do maximálního rozsahu jen
-                                        proto, že kolega vedle na podložce se do pozice dostane a tím si
-                                        ubližujeme. Prozkoumáváme svoje hranice."
+                "Studenti jsou neustále nabádáni k obracení pozornosti k tomu, co prožívají v přítomném okamžiku."
+                "Pozorností v těle zjišťujeme, kde se v těle stres projevuje, samotné uvědomování si, pomáhá napětí odstranit."
+                "Všímáme si pocitů, emocí, myšlenek, smyslových vjemů, aniž bychom na ně reagovali, pouze z pozice pozorovatele."
+                "Znovu se napojíme na naše tělo a vytvoříme si prostor pro vnímání jeho signálů. Často jsme od svého těla odpojeni a žijeme jen „v hlavě“. Učíme se naslouchat našemu tělu, kde tělo říká, že se můžeme do pozice ponořit hlouběji a kde naopak máme zastavit. Při udržení této pozornosti se nedostáváme do bodu, ve kterém ucítíme bolest – každý vědomě přebírá zodpovědnost za čtení signálů vlastního těla."
+                "Vnímáme, kde nás omezuje naše mysl. Prozkoumáváme svoje hranice."
                 "Postupně odhalujeme a uvědomujeme si myšlenkové vzorce, tím máme možnost si uvědomit, které nám už neslouží a přeměnit je."
-                "Vnímáme, jaký vliv má náš duševní a emocionální postoj na náš fyzický
-                                        postoj. Změnou fyzického postoje v držení těla, dochází i k proměně
-                                        postojů a pocitů."
-                "Přenášíme klid a všímavost z jógamatky i do běžného života."
+                "Vnímáme, jaký vliv má náš duševní a emocionální postoj na náš fyzický postoj. Změnou fyzického postoje v držení těla, dochází i k proměně postojů a pocitů."
+                "Přenášíme klid a všímavost z jógamatky i do běžného života."
+                
             ] |> inList |> List.singleton |> div []
-            p [] [
-                str "Vše s lehkostí, radostí, zkoumavým zájmem. Pamatujte, pokud se stresujeme
-                                během praxe jógy, nemůžeme se v běžném životě zbavit stresu.
-                                Jóga by nikdy neměla být brána příliš vážně."
-            ]
         ]
     ]

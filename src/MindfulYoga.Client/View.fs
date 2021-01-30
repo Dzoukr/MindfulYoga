@@ -28,6 +28,8 @@ let menu (state:State) dispatch =
             Navbar.Item.a [ Navbar.Item.Option.Props [ Href Router.AboutMe.Path; OnClick Router.goToUrl ] ] [
                 img [ Src "img/logo.png" ]
             ]
+            
+
             a [ Class ("navbar-burger " + burgerMenuClass); OnClick (fun _ -> ToggleBurgerMenu |> dispatch) ] [
                 span [] []
                 span [] []
@@ -38,7 +40,6 @@ let menu (state:State) dispatch =
             Navbar.End.div [] [
                 item Router.MindfulYoga "Mindful Yoga"
                 item Router.MindfulnessRmt "Mindfulness / RMT"
-                item Router.Retreat "Podzimní retreat"
                 item Router.Lessons "Lekce"
                 item Router.Workshops "Workshopy / RMT kurzy"
                 item Router.IndividualLessons "Individuální lekce"
@@ -46,6 +47,19 @@ let menu (state:State) dispatch =
                 item Router.AboutMe "O mně"
                 item Router.Contact "Kontakt"
             ]            
+        ]
+        Html.div [
+            prop.className "navbar-item top-icons"
+            prop.children [
+                Html.a [
+                    prop.href "https://www.facebook.com/mindfulyoga.cz"
+                    prop.children [ Html.i [ prop.className "fab fa-facebook-f fa-lg"; prop.custom("data-fa-transform", "shrink-3.5 down-1.6 right-1.25"); prop.custom("data-fa-mask", "fas fa-circle") ] ]
+                ]
+                Html.a [
+                    prop.href "https://www.youtube.com/channel/UCqpdbmUsTNYkaEIFFnRHiMg"
+                    prop.children [ Html.i [ prop.className "fab fa-youtube fa-lg"; prop.custom("data-fa-transform", "shrink-5"); prop.custom("data-fa-mask", "fas fa-circle") ] ]
+                ]
+            ]
         ]
     ]
 
@@ -128,7 +142,6 @@ let render (state : State) (dispatch : Msg -> unit) =
         | Router.AboutMe -> AboutMe.View.view
         | Router.MindfulYoga -> MindfulYoga.View.view
         | Router.MindfulnessRmt -> MindfulnessRmt.View.view
-        | Router.Retreat -> Retreat.View.view state dispatch
         | Router.Lessons -> Lessons.View.view state dispatch
         | Router.IndividualLessons -> IndividualLessons.View.view
         | Router.CompanyLessons -> CompanyLessons.View.view

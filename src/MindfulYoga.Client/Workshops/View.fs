@@ -80,5 +80,23 @@ let view state dispatch =
             inP "Zvu Vás k účasti na 8-týdenním programu Relational Mindfulness Training (RMT), který se zaměřuje na rozvoj mindfulness (všímavosti) v komunikaci a interakci s druhými lidmi."
             inP "Program je navržen tak, aby Vám pomohl stát se sebevědomějším, stabilnějším a pozornějším člověkem ve společnosti. Vědecký výzkum prokázal, že účast v RMT pomáhá výrazně snížit stres, zlepšit psychickou odolnost a také rozvinout pozornost, empatii a komunikačních dovednosti."
             inPraw "<i>V tuto chvíli není další termín kurzu naplánován, v případě Vašeho zájmu o kurz, mě prosím neváhejte kontaktovat a já Vás budu informovat hned, jakmile se bude blížit jeho termín otevření.</i>"
+            
+            Html.h3 "Co získám, když se budu věnovat relation mindfulness?"
+            [
+                "Naučím se pracovat se stresem a vlastními emocemi, a to především v momentech, kdy komunikuji nebo spolupracuji s druhými lidmi."
+                "Prohloubení a zlepšení vztahů. Stávám se laskavější, empatičtější a pozornější k lidem v mém okolí." 
+                "Zlepšení orientace sám v sobě. Poznávám a uvědomuji si svoje reakce při komunikaci. Učím se pochopit a změnit ty, které mi nevyhovují." 
+                "Zvládám konfliktní situace s větší lehkostí, naučím se nenásilnou cestou říci o to, co skutečně potřebuji. Zlepšuji svoje komunikační dovednosti." 
+                "Vím, co chci a co ne, snadněji nastavuji hranice vůči ostatním." 
+            ] |> inList |> List.singleton |> div []            
+            Html.h3 "Spolupracuji:"            
+            Html.p [
+                text.hasTextCentered
+                prop.children [
+                    Html.img [
+                        prop.src "img/mindfulnessclub.png"
+                    ]
+                ]
+            ]
         ]
     ]

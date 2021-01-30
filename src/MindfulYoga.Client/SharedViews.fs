@@ -36,7 +36,7 @@ let inList c =
     c 
     |> List.map (fun x ->
         li [] [
-            i [ Class "fa-li fas fa-chevron-circle-right" ] [] 
+            i [ Class "fa-li fab fa-gratipay" ] [] 
             str x
         ]
     )

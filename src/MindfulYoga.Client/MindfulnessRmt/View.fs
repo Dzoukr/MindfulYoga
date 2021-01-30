@@ -30,35 +30,10 @@ let view =
                 "Mindfulness funguje jako radar ke všemu, co se děje vně nás. Všímám si maličkostí a drobností, které mi dělají radost. Drobnosti jsou to, co dělá člověka opravdu šťastným.  Kolik toho v životě prostě přehlédneme?"
             ] |> inList |> List.singleton |> div []
         ]
-        emptySection
+        //emptySection
         textSectionCentered [
             h4 [] [ str "Začni dělat cokoliv, co můžeš nebo o čem sníš. Smělost má v sobě génia, sílu a kouzlo." ]
             p [] [ str "- W.H. Murray"]                            
         ]
-        emptySection
-        textSection [
-            Html.h1 "Relation mindfulness"
-            Html.p [
-                Html.text "Relation mindfulness se zabývá rozvojem všímavosti v mezilidských vztazích."
-                Html.br []
-                Html.h3 "Co získám, když se budu věnovat relation mindfulness?"
-            ]
-            [
-                "Naučím se pracovat se stresem a vlastními emocemi, a to především v momentech, kdy komunikuji nebo spolupracuji s druhými lidmi."
-                "Prohloubení a zlepšení vztahů. Stávám se laskavější, empatičtější a pozornější k lidem v mém okolí." 
-                "Zlepšení orientace sám v sobě. Poznávám a uvědomuji si svoje reakce při komunikaci. Učím se pochopit a změnit ty, které mi nevyhovují." 
-                "Zvládám konfliktní situace s větší lehkostí, naučím se nenásilnou cestou říci o to, co skutečně potřebuji. Zlepšuji svoje komunikační dovednosti." 
-                "Vím, co chci a co ne, snadněji nastavuji hranice vůči ostatním." 
-            ] |> inList |> List.singleton |> div []            
-            
-            Html.h3 "Spolupracuji:"            
-            Html.p [
-                text.hasTextCentered
-                prop.children [
-                    Html.img [
-                        prop.src "img/mindfulnessclub.png"
-                    ]
-                ]
-            ]
-        ]
+        
     ]

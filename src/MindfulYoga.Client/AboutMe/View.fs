@@ -92,6 +92,7 @@ let view =
         textSection [
             h1 [] [ str "Vzdělání"]
             [
+                "2020", "Lektorka na projektu Terapeutická technika jako pomoc při vyrovnávání se s duševními obtížemi, Toseví z.s."
                 "2020-24", "Pražská vysoká škola psychosociálních studií, Daseinsanalytický psychoterapeutický výcvik"
                 "2019", "Meditační ústraní, Jeff Oliver (AUS)"
                 "2019", "Úvod do zaklánění, Dalibor Štedronský"

@@ -10,7 +10,6 @@ open Elmish.UrlParser
 type Page =
     | AboutMe
     | MindfulYoga
-    | Retreat
     | Lessons
     | IndividualLessons
     | CompanyLessons
@@ -22,7 +21,6 @@ type Page =
             match x with
             | AboutMe -> "/o-mne"
             | MindfulYoga -> "/mindful-yoga"
-            | Retreat -> "/retreat"
             | Lessons -> "/lekce"
             | IndividualLessons -> "/individualni-lekce"
             | CompanyLessons -> "/joga-pro-firmy"
@@ -39,7 +37,6 @@ let pageParser: Parser<Page -> Page, Page> =
     oneOf [
         map AboutMe (s Page.AboutMe.Path)
         map MindfulYoga (s Page.MindfulYoga.Path)
-        map Retreat (s Page.Retreat.Path)
         map Lessons (s Page.Lessons.Path)
         map IndividualLessons (s Page.IndividualLessons.Path)
         map CompanyLessons (s Page.CompanyLessons.Path)
