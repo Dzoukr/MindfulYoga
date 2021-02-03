@@ -34,7 +34,13 @@ let view =
                 "Poznávám, kdo ve skutečnosti jsem a co chci"
             ] |> inList |> List.singleton |> div []
             
-            inP "Přidej se do skupiny podobně smýšlejících jogínek."
+            
+            Html.div [
+                prop.className "join"
+                prop.children [
+                    Html.h3 "Přidej se do skupiny podobně smýšlejících jogínek ❤️"
+                ]
+            ]
 
           
             Html.p [
@@ -59,7 +65,7 @@ let view =
         
         emptySection
         textSection [
-            h2 [] [ str "Jak to všechno funguje?"]
+            h2 [] [ str "Jak praxe mindful yogy funguje?"]
             [       
                 "Studenti jsou neustále nabádáni k obracení pozornosti k tomu, co prožívají v přítomném okamžiku."
                 "Pozorností v těle zjišťujeme, kde se v těle stres projevuje, samotné uvědomování si, pomáhá napětí odstranit."
@@ -69,7 +75,7 @@ let view =
                 "Postupně odhalujeme a uvědomujeme si myšlenkové vzorce, tím máme možnost si uvědomit, které nám už neslouží a přeměnit je."
                 "Vnímáme, jaký vliv má náš duševní a emocionální postoj na náš fyzický postoj. Změnou fyzického postoje v držení těla, dochází i k proměně postojů a pocitů."
                 "Přenášíme klid a všímavost z jógamatky i do běžného života."
-                
+                "Více naživo a na vlastní kůži ... těším se na vás na lekcích!"
             ] |> inList |> List.singleton |> div []
         ]
     ]

@@ -9,8 +9,14 @@
         text-align: center;
         margin-top: 4rem;
         margin-bottom: 2rem;
-        .button:first-child {
-            margin-right: 5rem;
+        
+    }
+    
+    .join {
+        h3 {
+            margin-top: 3rem;
+            color: #11acc7 !important;
+            text-align: center;
         }
     }
 }
@@ -25,5 +31,6 @@
         padding-left: 1.5rem;
     }
     margin-bottom: 1.5rem;
+    
 }
 
