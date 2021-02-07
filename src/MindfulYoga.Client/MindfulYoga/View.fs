@@ -17,21 +17,27 @@ let view =
         textSection [
             h1 [] [ str "MINDFUL YOGA "; sup [] [str "®"]]
             
-            inP "Mindful yoga (všímavá jóga) je praxe jógy s důrazem na prosté uvědomování si toho, co se se mnou v přítomném okamžiku děje." 
-            inP "Přijímáme pocity, emoce, myšlenky takové, jaké jsou, bez potřeby skutečnost jakkoliv měnit." 
-            inP "Pozorně vnímáme každý pohyb, všímáme si pocitů, emocí, myšlenek, dechu... všeho co je dominantní. Vytváříme prostor, který nám umožňuje snáze uslyšet signály těla a objevit, co opravdu potřebujeme, ať už na podložce nebo mimo ní." 
-            inP "Zaměření pozornosti na to, co se v daném okamžiku děje a jak na probíhající procesy reagujeme, transformuje jógu do formy meditace."
-            inP "Vychází z praxe tradiční hatha jógy a meditace mindfulness."
+            Html.p [
+                prop.className "what-is"
+                prop.text "Mindful yoga je praxe jógy propojující „mindfulness“ – schopnost vnímat a uvědomovat si události v přítomném okamžiku a tradiční hatha yogu – jóga stará již tisíce let."
+            ]
             
-            h2 [] [ str "Co získám praxí mindful yogy?"]
+            Html.p "Mindful yoga (všímavá jóga) je praxe jógy s důrazem na rozvíjení schopnosti vnímat a uvědomovat si události v přítomném okamžiku tedy během jógové praxe." 
+            Html.p "Jedná se o události vnější (okolní prostředí) a vnitřní (pocity, emoce, myšlenky a procesy související s tělem – pohyb, dech)."  
+            Html.p "Vytváříme prostor, který nám umožňuje snáze uslyšet signály těla a objevit, co opravdu potřebujeme, ať už na jógové podložce nebo mimo ní."
+            Html.p "Zaměření pozornosti na to, co se v daném okamžiku děje a jak na probíhající procesy reagujeme, transformuje jógu do formy meditace."
+
+            h2 [] [ str "Co získám praxí Mindful yogy?"]
             [       
-                "Sníží se mi pociťovaný stres"
-                "Moje tělo se uvolní"
-                "Vřelejší vztah k sobě – učím se přijímat a podporovat" 
-                "Zvýší se mi sebedůvěra"
-                "Učím se mít ráda a přijímat se" 
+                "Umění žít a praktikovat jógu v přítomnosti"
+                "Nižší hladinu pociťovaného stresu"
+                "Lepší orientaci ve svých pocitech, emocích, myšlenkách"
+                "Vřelejší vztah k sobě – učím se přijímat a podporovat"
+                "Uvolněné tělo"
+                "Vyšší sebedůvěru"
                 "Propojení se svým tělem"
-                "Poznávám, kdo ve skutečnosti jsem a co chci"
+                "Naučím se mít ráda a přijímat se"
+                "Poznávám, kdo ve skutečnosti jsem a co potřebuji"
             ] |> inList |> List.singleton |> div []
             
             
@@ -59,13 +65,8 @@ let view =
         ]
         
         emptySection
-        textSectionCentered [
-            h4 [] [ str "\" Vše se odehrává v přítomném okamžiku, jen v něm lze věci měnit. \"" ]
-        ]
-        
-        emptySection
         textSection [
-            h2 [] [ str "Jak praxe mindful yogy funguje?"]
+            h2 [] [ str "Jak praxe Mindful yogy probíhá?"]
             [       
                 "Studenti jsou neustále nabádáni k obracení pozornosti k tomu, co prožívají v přítomném okamžiku."
                 "Pozorností v těle zjišťujeme, kde se v těle stres projevuje, samotné uvědomování si, pomáhá napětí odstranit."

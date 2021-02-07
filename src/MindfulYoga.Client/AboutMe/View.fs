@@ -13,7 +13,7 @@ let view =
             img [ Src "img/aboutme_bg.jpg"]
         ]
         textSection [
-            h1 [] [ str "Můj příběh"]
+            h1 [] [ str "Ing. Jana Provazníková"]
             p [] [
                 str "Poprvé jsem se setkala s jógou na začátku mého studia na vysoké škole, kdy jsem
                     sezením nad knížkami trávila dlouhé hodiny. Přišly bolesti zad, ztuhlá krční páteř
@@ -54,7 +54,7 @@ let view =
                     obohatit, aby přinášela co největší užitek. V hlavě mi zrála myšlenka o propojení
                     meditace (mindfulness) s tělem a pohybem, až se jednoho krásného letního dne
                     zrodil nápad "
-                a [ Class "mindful-link"; Href Router.MindfulYoga.Path; OnClick Router.goToUrl ] [ str "mindful yogy®"]
+                a [ Class "mindful-link"; Href Router.MindfulYoga.Path; OnClick Router.goToUrl ] [ str "Mindful yogy®"]
                 str "."
             ]
             p [] [
@@ -83,11 +83,7 @@ let view =
                 str "Jana"
             ]
         ]
-        emptySection
-        textSectionCentered [
-            h4 [] [ str "Skutečná objevitelská cesta nespočívá v hledání nových krajů, ale ve vnímání světa novýma očima." ]
-            p [] [ str "- Marcel Proust"]                            
-        ]
+        
         emptySection
         textSection [
             h1 [] [ str "Vzdělání"]

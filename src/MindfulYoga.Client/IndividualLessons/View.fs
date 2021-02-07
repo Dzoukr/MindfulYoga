@@ -27,16 +27,16 @@ let view =
             h3 [] [ str "Mindful Yoga Therapy"]
             p [] [
                 str "Individuální lekce "
-                a [ Class "mindful-link"; Href Router.MindfulYoga.Path; OnClick Router.goToUrl ] [ str "mindful yogy®"]                        
+                a [ Class "mindful-link"; Href Router.MindfulYoga.Path; OnClick Router.goToUrl ] [ str "Mindful yogy®"]                        
                 str " vytvořená na míru s plným zohledněním Vašich aktuálních potřeb a současného zdravotního stavu."
                 br []
                 br []
-                str "Jógová praxe, během které obracíme pozornost ke svému vnitřnímu prostředí. Dále cílí na posílení a protažení svalů, což zlepšuje zdraví orgánů, kostí, oběhového i dýchacího systému."
+                str "Jógová praxe, během které obracíme pozornost ke svému vnitřnímu prostředí. Dále cílí na posílení a protažení svalů a zlepšení zdraví orgánů, kostí, oběhového i dýchacího systému."
             ]
             
             h3 [] [ str "Mindful Yin Yoga Therapy"]
             p [] [
-                str "Individuální lekce mindful yin yogy vytvořená na míru s plným zohledněním Vašich aktuálních potřeb a současného zdravotního stavu."
+                str "Individuální lekce Mindful yin yogy vytvořená na míru s plným zohledněním Vašich aktuálních potřeb a současného zdravotního stavu."
                 br []
                 br []
                 str "Mindful yin yoga přináší propojení yin yogy, která vychází z tradiční čínské medicíny a mindfulness. Během cvičení podporujeme růst bdělé pozornosti k vnímání svého těla.
