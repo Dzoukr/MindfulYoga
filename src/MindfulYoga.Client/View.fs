@@ -39,7 +39,7 @@ let menu (state:State) dispatch =
         Navbar.menu [ Navbar.Menu.Option.Props [ Id "navMenu"; Class ("navbar-menu " + burgerMenuClass)] ] [
             Navbar.End.div [] [
                 item Router.MindfulYoga "Mindful Yoga"
-                item Router.Lessons "Lekce"
+                item Router.Online "Online"
                 item Router.Workshops "Workshopy / RMT kurzy"
                 item Router.IndividualLessons "Individuální lekce"
                 item Router.CompanyLessons "Jóga pro firmy"
@@ -140,7 +140,7 @@ let render (state : State) (dispatch : Msg -> unit) =
         match state.Page with
         | Router.AboutMe -> AboutMe.View.view
         | Router.MindfulYoga -> MindfulYoga.View.view
-        | Router.Lessons -> Lessons.View.view state dispatch
+        | Router.Online -> Online.View.view state dispatch
         | Router.IndividualLessons -> IndividualLessons.View.view
         | Router.CompanyLessons -> CompanyLessons.View.view
         | Router.Contact -> Contact.View.view state dispatch
