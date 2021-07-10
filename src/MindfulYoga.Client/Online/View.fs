@@ -113,15 +113,11 @@ let view state dispatch =
                     Bulma.column [ column.is2 ]
                 ]
             ]
-            Html.h3 "Cena"
-            Html.p "Doporučená výše příspěvku za celý kurz je 550 Kč, pokud přizvete kamarádku cena za obě 1000 Kč. Pokud si v téhle covidové době nemůžete kurz dovolit, napište mi, že se chcete zúčastnit a přispějte v dobrovolné výši nebo vůbec. Ráda Vám udělám radost!"
             Html.h3 [
                 text.hasTextCentered
                 prop.children [
                     Html.a [ prop.text "👉 Stránky facebookové události"; prop.href "https://www.facebook.com/events/222453422751849/" ]
-                    
                 ]
-                
             ]
         ]
         
